@@ -25,8 +25,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func compositionRoot() -> UIViewController {
         
-        let rootViewController = HomeViewController()
-        let navigation = UINavigationController(rootViewController: rootViewController)
+        let helpCenter = HelpCenter()
+        let homeViewModel = HomeViewModel(helpCenter: helpCenter)
+        let homeViewController = HomeViewController(viewModel: homeViewModel)
+
+        let navigation = UINavigationController(rootViewController: homeViewController)
 
         return navigation
     }
