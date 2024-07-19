@@ -18,6 +18,8 @@ where Data: RandomAccessCollection {
     private var collectionview: UICollectionView?
     private var headerTopPadding: CGFloat = 40
 
+    private var headerView: UIView?
+
     public init(_ collection: Data,
                 layout: CollectionViewLayout = CollectionViewLayout(itemsPerRow: 2),
                 @DeclarativeViewBuilder builder: @escaping (Data.Element) -> [UIView]) {
@@ -57,27 +59,34 @@ where Data: RandomAccessCollection {
         collectionview.backgroundColor = UIColor.white
 
         view.add(collectionview).backgroundColor(.white)
+
+        // Initialize and configure the header view
+
+        guard let header = headerBuilder?() else { return }
+        headerView = header
+
+        // Set up initial constraints for the header view
+        collectionview
+            .addSubview(header)
+        
+        header
+            .connect(\.leadingAnchor, to: collectionview.leadingAnchor)
+            .connect(\.trailingAnchor, to: collectionview.trailingAnchor)
+            .connect(\.topAnchor, to: collectionview.topAnchor, padding: headerTopPadding)
+            .connect(\.widthAnchor, to: collectionview.widthAnchor)
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // The first section is used for padding
-        2
+        1
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        }
-        return collection.count
+        collection.count
     }
 
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // The first section is only added for some Padding
-        if indexPath.section == 0 {
-            return CGSize(width: view.frame.width, height: headerTopPadding)
-        }
-
+    func collectionView(_ collectionView: UICollectionView, 
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         let padding: CGFloat = 20.0
         let width = view.frame.width / CGFloat(layout.itemsPerRow) - padding
         let height = width * 0.8
@@ -90,12 +99,6 @@ where Data: RandomAccessCollection {
                                                           for: indexPath) as? ReusableCollectionViewCell
         else {
             return UICollectionViewCell()
-        }
-
-        // The first section is only added for some Padding
-        if indexPath.section == 0 {
-            cell.inject(UIView())
-            return cell
         }
 
         // 1. Getting the element from the collection
@@ -116,46 +119,22 @@ where Data: RandomAccessCollection {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+        let totalHeaderHeight = (headerView?.bounds.size.height ?? 0.0) + headerTopPadding
+        return UIEdgeInsets(top: totalHeaderHeight, left: 15, bottom: 0, right: 15)
     }
 
-    func collectionView(_ collectionView: UICollectionView, 
-                        viewForSupplementaryElementOfKind kind: String,
-                        at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let header = collectionView
-                .dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
-                                                  withReuseIdentifier: ReusableCollectionViewCell.reuseIdentifier, for: indexPath) as! ReusableCollectionViewCell
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let stickyOffset: CGFloat = headerTopPadding // Adjust this value to your desired sticky point
 
-            if let headerView = headerBuilder?() {
-                header.inject(headerView)
+        let yOffset = scrollView.contentOffset.y + scrollView.contentInset.top
+
+        guard let collectionview else { return }
+
+        // Adjust the top constraint of the header view
+        for constraint in collectionview.constraints {
+            if constraint.firstItem === headerView && constraint.firstAttribute == .top {
+                constraint.constant = max(yOffset, stickyOffset)
             }
-
-            return header
-            
-        default:  
-            fatalError("Unexpected element kind")
-        }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if section == 0 {
-            return CGSize.zero
-        }
-
-        if headerBuilder != nil  {
-            // Get the view for the first header
-            let indexPath = IndexPath(row: 0, section: section)
-            let headerView = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: indexPath)
-
-            // Use this view to calculate the optimal size based on the collection view's width
-            return headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: UIView.layoutFittingExpandedSize.height),
-                                                      withHorizontalFittingPriority: .required, // Width is fixed
-                                                      verticalFittingPriority: .fittingSizeLevel) // Height can be as large as needed
-        } else {
-            return CGSize.zero
         }
     }
 

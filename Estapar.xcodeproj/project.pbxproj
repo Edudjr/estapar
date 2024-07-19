@@ -23,6 +23,9 @@
 		20EAADF92C4A2597003A68D8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAADF82C4A2597003A68D8 /* HomeViewModel.swift */; };
 		20EAADFD2C4A2631003A68D8 /* HelpCenterCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAADFC2C4A2631003A68D8 /* HelpCenterCardViewModel.swift */; };
 		20EAAE022C4A4006003A68D8 /* HelpCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE012C4A4006003A68D8 /* HelpCenterView.swift */; };
+		20EAAE042C4A7495003A68D8 /* HelpCenterWecomeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE032C4A7495003A68D8 /* HelpCenterWecomeMessage.swift */; };
+		20EAAE072C4A74E7003A68D8 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE062C4A74E7003A68D8 /* UIViewController+Extensions.swift */; };
+		20EAAE092C4A752C003A68D8 /* ScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE082C4A752C003A68D8 /* ScrollView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		20EAADF82C4A2597003A68D8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		20EAADFC2C4A2631003A68D8 /* HelpCenterCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterCardViewModel.swift; sourceTree = "<group>"; };
 		20EAAE012C4A4006003A68D8 /* HelpCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterView.swift; sourceTree = "<group>"; };
+		20EAAE032C4A7495003A68D8 /* HelpCenterWecomeMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterWecomeMessage.swift; sourceTree = "<group>"; };
+		20EAAE062C4A74E7003A68D8 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		20EAAE082C4A752C003A68D8 /* ScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,7 @@
 		20EAADB52C49DBE5003A68D8 /* Estapar */ = {
 			isa = PBXGroup;
 			children = (
+				20EAAE052C4A74D9003A68D8 /* Extensions */,
 				20EAADF32C4A2336003A68D8 /* Models */,
 				20EAADF02C4A1D6F003A68D8 /* ReusableViews */,
 				20EAADFB2C4A25AB003A68D8 /* Screens */,
@@ -182,6 +189,7 @@
 				20EAADEE2C49FA73003A68D8 /* HelpCenterCard.swift */,
 				20EAADFC2C4A2631003A68D8 /* HelpCenterCardViewModel.swift */,
 				20EAAE012C4A4006003A68D8 /* HelpCenterView.swift */,
+				20EAAE032C4A7495003A68D8 /* HelpCenterWecomeMessage.swift */,
 			);
 			path = HelpCenter;
 			sourceTree = "<group>";
@@ -193,6 +201,15 @@
 				20EAADE62C49DD4C003A68D8 /* Home */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		20EAAE052C4A74D9003A68D8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				20EAAE062C4A74E7003A68D8 /* UIViewController+Extensions.swift */,
+				20EAAE082C4A752C003A68D8 /* ScrollView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +348,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20EAAE042C4A7495003A68D8 /* HelpCenterWecomeMessage.swift in Sources */,
+				20EAAE072C4A74E7003A68D8 /* UIViewController+Extensions.swift in Sources */,
+				20EAAE092C4A752C003A68D8 /* ScrollView+Extensions.swift in Sources */,
 				20EAADBB2C49DBE5003A68D8 /* HomeViewController.swift in Sources */,
 				20EAADF22C4A1D84003A68D8 /* CollectionView.swift in Sources */,
 				20EAAE022C4A4006003A68D8 /* HelpCenterView.swift in Sources */,

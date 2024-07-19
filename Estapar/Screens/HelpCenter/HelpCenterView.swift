@@ -17,66 +17,23 @@ final class HelpCenterView: UIView {
                            articlesNumber: card.articlesNumber)
         }
         .header {
-            VerticalStack {
-                UILabel()
-                    .text("Olá, Eduardo 👋")
-
-                UILabel()
-                    .text("Como podemos ajudar?")
-            }
-            .padding(.vertical, 10)
+            HelpCenterWelcomeMessage(name: "Eduardo")
         }
         .asUIView()
     }
 
-//    var body: UIView {
-//        ScrollView(.vertical) {
-//            VerticalStack {
-//
-//                UILabel()
-//                    .text("Olá, Eduardo 👋")
-//                    .padding(.top, 40)
-//
-//                UILabel()
-//                    .text("Como podemos ajudar?")
-//                    .padding(.bottom, 40)
-//
-//                CollectionView(cards) { card in
-//                    HelpCenterCard(title: card.title,
-//                                   articlesNumber: card.articlesNumber)
-//                }
-//                .asUIView()
-//                .set(\.heightAnchor, to: UIScreen.main.bounds.height * 0.8)
-//            }
-//        }
-//        .bounces(false)
-//    }
-
     init(cards: [HelpCenterCardViewModel]) {
         self.cards = cards
         super.init(frame: .zero)
-        reloadView()
+        add(body)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    private func reloadView() {
-        subviews.forEach { $0.removeFromSuperview() }
-        add(body)
-    }
 }
 
 // TODO: move to another file
-extension UIViewController {
-    func asUIView() -> UIView {
-        ViewControllerHost {
-            self
-        }
-    }
-}
-
 public class ZStack: UIView {
     public init() {
         super.init(frame: CGRect.zero)
@@ -93,13 +50,5 @@ public extension ZStack {
         for innerView in builder() {
             add(innerView)
         }
-    }
-}
-
-public extension ScrollView {
-    @discardableResult
-    func bounces(_ shouldBounce: Bool) -> Self {
-        self.bounces = shouldBounce
-        return self
     }
 }
