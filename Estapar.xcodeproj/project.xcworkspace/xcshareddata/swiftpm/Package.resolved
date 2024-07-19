@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "git@github.com:Columbina/DeclarativeUIKit.git",
       "state" : {
-        "revision" : "be5ad80235f214c0c2b8b873c0807793d23c1399",
-        "version" : "2.0.0"
+        "revision" : "61904fc518bd562d5817f00fd6bf390594bb3b39",
+        "version" : "2.0.1"
       }
     }
   ],
