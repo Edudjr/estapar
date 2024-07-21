@@ -8,7 +8,7 @@
 import Foundation
 
 final class FAQItemViewModel {
-    var isExpanded = false
+    @Published var isExpanded = false
     let category: String
     let questions: [String]
 

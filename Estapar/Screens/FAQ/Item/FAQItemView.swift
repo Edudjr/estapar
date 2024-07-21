@@ -5,50 +5,60 @@
 //  Created by Eduardo Domene Junior on 21/07/24.
 //
 
+import Combine
 import DeclarativeUIKit
 import UIKit
 
 final class FAQItemView: UIView {
     private(set) var isExpanded = false
-    private var item: FAQItemViewModel
+    private var viewModel: FAQItemViewModel
+    private var isExpandedCancellable: AnyCancellable?
 
     var body: UIView {
         VerticalStack {
             UILabel()
-                .text(item.category)
+                .text(viewModel.category)
                 .font(.boldSystemFont(ofSize: 18))
                 .textColor(.blue)
                 .onTapGesture { [weak self] in
-                    guard let self else { return }
-                    self.item.isExpanded.toggle()
-                    if self.item.isExpanded {
-                        self.expand()
-                    } else {
-                        self.collapse()
-                    }
+                    self?.viewModel.isExpanded.toggle()
                 }
 
             itemsStack
-                .isHidden(!item.isExpanded)
+                .isHidden(!viewModel.isExpanded)
         }
     }
 
     lazy var itemsStack: UIView = {
         VerticalStack {
-            ForEach(item.questions) { question in
+            ForEach(viewModel.questions) { question in
                 UILabel().text(question)
             }
         }
     }()
 
-    init(item: FAQItemViewModel) {
-        self.item = item
+    init(viewModel: FAQItemViewModel) {
+        self.viewModel = viewModel
         super.init(frame: .zero)
         add(body)
+        bind()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    private func bind() {
+        isExpandedCancellable = viewModel.$isExpanded
+            .receive(on: DispatchQueue.main)
+            .dropFirst()
+            .sink { isExpanded in
+                if isExpanded {
+                    self.expand()
+                } else {
+                    self.collapse()
+                }
+            }
     }
 
     @discardableResult

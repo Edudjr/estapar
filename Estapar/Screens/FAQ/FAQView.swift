@@ -32,7 +32,7 @@ final class FAQView: UIView {
                     .focus()
 
                 ForEach(viewModel.items) { item in
-                    FAQItemView(item: item)
+                    FAQItemView(viewModel: item)
                 }
 
                 Spacer()
