@@ -9,7 +9,8 @@ import DeclarativeUIKit
 import UIKit
 
 final class FAQItemView: UIView {
-    let item: FAQItemViewModel
+    private(set) var isExpanded = false
+    private var item: FAQItemViewModel
 
     var body: UIView {
         VerticalStack {
@@ -18,18 +19,17 @@ final class FAQItemView: UIView {
                 .font(.boldSystemFont(ofSize: 18))
                 .textColor(.blue)
                 .onTapGesture { [weak self] in
-                    UIView.animate(withDuration: 0.2,
-                                   delay: 0.0,
-                                   options: .curveEaseIn,
-                                   animations:
-                                    {
-                        self?.itemsStack.isHidden.toggle()
-                        self?.layoutIfNeeded()
-                    }) { _ in }
+                    guard let self else { return }
+                    self.item.isExpanded.toggle()
+                    if self.item.isExpanded {
+                        self.expand()
+                    } else {
+                        self.collapse()
+                    }
                 }
 
             itemsStack
-                .isHidden(true)
+                .isHidden(!item.isExpanded)
         }
     }
 
@@ -49,5 +49,32 @@ final class FAQItemView: UIView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    @discardableResult
+    func expand() -> Self {
+        animate { [weak self] in
+            self?.itemsStack.isHidden(false)
+        }
+
+        return self
+    }
+
+    @discardableResult
+    func collapse() -> Self {
+        animate { [weak self] in
+            self?.itemsStack.isHidden(true)
+        }
+        return self
+    }
+
+    private func animate(_ handler: @escaping () -> Void) {
+        UIView.animate(withDuration: 0.2,
+                       delay: 0.0,
+                       options: .curveEaseIn,
+                       animations: {
+            handler()
+            self.layoutIfNeeded()
+        }) { _ in }
     }
 }

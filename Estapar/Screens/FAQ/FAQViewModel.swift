@@ -8,9 +8,15 @@
 import Foundation
 
 final class FAQViewModel {
-    let categoryId: String
-    let helpCenter: HelpCenterProtocol
-    
+    private let categoryId: String
+    private let helpCenter: HelpCenterProtocol
+
+    private var unfilteredItems = [FAQItemViewModel]() {
+        didSet {
+            items = unfilteredItems
+        }
+    }
+    @Published var appliedSearch = ""
     @Published var items = [FAQItemViewModel]()
     @Published var isLoading = true
 
@@ -23,8 +29,13 @@ final class FAQViewModel {
         Task {
             isLoading = true
             let items = await helpCenter.faq(forCategoryId: categoryId)
-            self.items = items.map(FAQItemViewModel.init)
+            self.unfilteredItems = items.map(FAQItemViewModel.init)
             isLoading = false
         }
+    }
+
+    func filterFAQ(containing text: String) {
+        self.appliedSearch = text
+        self.items = unfilteredItems.filter { $0.contains(text: text) }
     }
 }

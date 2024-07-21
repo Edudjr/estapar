@@ -39,13 +39,9 @@ final class HelpCenter: HelpCenterProtocol {
         return [
             FAQItem(category: "Uso da tag de pedágio Zul+",
                     questions: ["Como funciona a tarifa de recarga?"]),
-            FAQItem(category: "Uso da tag de pedágio Zul+",
-                    questions: ["Como funciona a tarifa de recarga?"]),
-            FAQItem(category: "Uso da tag de pedágio Zul+",
-                    questions: ["Como funciona a tarifa de recarga?"]),
-            FAQItem(category: "Uso da tag de pedágio Zul+",
-                    questions: ["Como funciona a tarifa de recarga?"]),
-            FAQItem(category: "Uso da tag de pedágio Zul+",
+            FAQItem(category: "Entrega da tag",
+                    questions: ["Quando posso usar a minha tag?"]),
+            FAQItem(category: "Calculo",
                     questions: ["Como funciona a tarifa de recarga?"])
         ]
     }

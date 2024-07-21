@@ -52,4 +52,10 @@ extension UIView {
         viewController.view.add(view)
         show(viewController)
     }
+
+    @discardableResult
+    func becomeResponder() -> Self {
+        self.becomeFirstResponder()
+        return self
+    }
 }
