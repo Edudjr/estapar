@@ -12,21 +12,13 @@ import DeclarativeUIKit
 final class HomeViewController: UIViewController {
     private let viewModel: HomeViewModel
 
-    private var cardsCancellable: AnyCancellable?
-
     var body: UIView {
-        if let cards = viewModel.cards {
-            HelpCenterView(cards: cards)
-        } else {
-            LoadingView()
-        }
+        HelpCenterView(viewModel: viewModel.helpCenterViewModel)
     }
 
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        bindCards()
-        loadCards()
     }
     
     required init?(coder: NSCoder) {
@@ -41,18 +33,6 @@ final class HomeViewController: UIViewController {
     private func reloadView() {
         view.subviews.forEach { $0.removeFromSuperview() }
         view.add(body)
-    }
-
-    private func bindCards() {
-        cardsCancellable = viewModel.$cards
-            .receive(on: DispatchQueue.main)
-            .sink { _ in
-                self.reloadView()
-            }
-    }
-
-    private func loadCards() {
-        viewModel.loadCards()
     }
 }
 

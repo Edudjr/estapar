@@ -1,18 +1,20 @@
 //
-//  HelpCenterCardViewModel.swift
+//  HelpCenterCategoryViewModel.swift
 //  Estapar
 //
 //  Created by Eduardo Domene Junior on 19/07/24.
 //
 
-struct HelpCenterCardViewModel {
+struct HelpCenterCategoryViewModel {
+    let categoryId: String
     let title: String
     let articlesNumber: Int
 }
 
-extension HelpCenterCardViewModel {
+extension HelpCenterCategoryViewModel {
     init(category: HelpCenterCategory) {
-        self.init(title: category.title,
+        self.init(categoryId: category.id,
+                  title: category.title,
                   articlesNumber: category.articlesNumber)
     }
 }

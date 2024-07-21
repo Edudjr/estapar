@@ -8,18 +8,9 @@
 import Combine
 
 final class HomeViewModel {
-    let helpCenter: HelpCenterProtocol
-
-    @Published var cards: [HelpCenterCardViewModel]?
+    let helpCenterViewModel: HelpCenterViewModel
 
     init(helpCenter: HelpCenterProtocol) {
-        self.helpCenter = helpCenter
-    }
-
-    func loadCards() {
-        Task {
-            let categories = await helpCenter.categories()
-            cards = categories.map(HelpCenterCardViewModel.init)
-        }
+        self.helpCenterViewModel = HelpCenterViewModel(helpCenter: helpCenter)
     }
 }
