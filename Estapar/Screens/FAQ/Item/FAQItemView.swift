@@ -10,7 +10,6 @@ import DeclarativeUIKit
 import UIKit
 
 final class FAQItemView: UIView {
-    private(set) var isExpanded = false
     private var viewModel: FAQItemViewModel
     private var isExpandedCancellable: AnyCancellable?
 

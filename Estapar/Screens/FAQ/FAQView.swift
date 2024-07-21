@@ -27,7 +27,7 @@ final class FAQView: UIView {
                 TextFieldView()
                     .text(viewModel.appliedSearch)
                     .onEdit { [weak self] text in
-                        self?.viewModel.filterFAQ(containing: text)
+                        self?.viewModel.appliedSearch = text
                     }
                     .focus()
 
@@ -72,59 +72,5 @@ final class FAQView: UIView {
 
     private func loadItems() {
         viewModel.loadItems()
-    }
-}
-
-class TextFieldView: UIView, UITextFieldDelegate {
-
-    var onEditHandler: ((String) -> Void)?
-
-    lazy var textField: UITextField = {
-        // Create a UITextField.
-        let textField = UITextField()
-
-        // Set Delegate to itself
-        textField.delegate = self
-
-        // Display frame.
-        textField.borderStyle = .roundedRect
-
-        // Add clear button.
-        textField.clearButtonMode = .whileEditing
-
-        textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-
-        return textField
-    }()
-
-    init() {
-        super.init(frame: .zero)
-        add(textField)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    @discardableResult
-    func text(_ text: String) -> Self {
-        self.textField.text = text
-        return self
-    }
-
-    @discardableResult
-    func onEdit(_ handler: @escaping (String) -> Void) -> Self {
-        onEditHandler = handler
-        return self
-    }
-
-    @objc
-    func textFieldDidChange() {
-        onEditHandler?(textField.text ?? "")
-    }
-
-    func focus() -> Self {
-        textField.becomeFirstResponder()
-        return self
     }
 }

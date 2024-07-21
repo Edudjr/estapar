@@ -32,6 +32,7 @@
 		20EAAE142C4CB1C0003A68D8 /* FAQViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE132C4CB1C0003A68D8 /* FAQViewModel.swift */; };
 		20EAAE162C4CB1D6003A68D8 /* FAQItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE152C4CB1D6003A68D8 /* FAQItemView.swift */; };
 		20EAAE182C4CB1F6003A68D8 /* FAQItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE172C4CB1F6003A68D8 /* FAQItemViewModel.swift */; };
+		20EAAE1B2C4DD44B003A68D8 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE1A2C4DD44B003A68D8 /* TextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		20EAAE132C4CB1C0003A68D8 /* FAQViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewModel.swift; sourceTree = "<group>"; };
 		20EAAE152C4CB1D6003A68D8 /* FAQItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItemView.swift; sourceTree = "<group>"; };
 		20EAAE172C4CB1F6003A68D8 /* FAQItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItemViewModel.swift; sourceTree = "<group>"; };
+		20EAAE1A2C4DD44B003A68D8 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 			children = (
 				20EAADF12C4A1D84003A68D8 /* CollectionView.swift */,
 				20EAADF62C4A24DF003A68D8 /* LoadingView.swift */,
+				20EAAE1A2C4DD44B003A68D8 /* TextFieldView.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				20EAAE092C4A752C003A68D8 /* ScrollView+Extensions.swift in Sources */,
 				20EAADBB2C49DBE5003A68D8 /* HomeViewController.swift in Sources */,
 				20EAADF22C4A1D84003A68D8 /* CollectionView.swift in Sources */,
+				20EAAE1B2C4DD44B003A68D8 /* TextFieldView.swift in Sources */,
 				20EAAE022C4A4006003A68D8 /* HelpCenterView.swift in Sources */,
 				20EAAE162C4CB1D6003A68D8 /* FAQItemView.swift in Sources */,
 				20EAADFD2C4A2631003A68D8 /* HelpCenterCategoryViewModel.swift in Sources */,

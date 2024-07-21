@@ -16,7 +16,13 @@ final class FAQViewModel {
             items = unfilteredItems
         }
     }
-    @Published var appliedSearch = ""
+
+    @Published var appliedSearch = "" {
+        didSet {
+            filterFAQ(containing: appliedSearch)
+        }
+    }
+
     @Published var items = [FAQItemViewModel]()
     @Published var isLoading = true
 
@@ -34,8 +40,7 @@ final class FAQViewModel {
         }
     }
 
-    func filterFAQ(containing text: String) {
-        self.appliedSearch = text
+    private func filterFAQ(containing text: String) {
         self.items = unfilteredItems.filter { $0.contains(text: text) }
     }
 }
