@@ -36,6 +36,12 @@ extension UIView {
         return self
     }
 
+    @discardableResult
+    func isHidden(_ isHidden: Bool) -> Self {
+        self.isHidden = isHidden
+        return self
+    }
+    
     func show(_ viewController: UIViewController) {
         guard let parentViewController else { return }
         parentViewController.show(viewController, sender: self)

@@ -19,7 +19,7 @@ final class HelpCenterWelcomeMessage: UIView {
             UILabel()
                 .text("Como podemos ajudar?")
         }
-        .padding(.vertical, 10)
+        .padding(.all, 15)
         .backgroundColor(.white)
     }
 

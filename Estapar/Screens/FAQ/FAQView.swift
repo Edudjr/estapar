@@ -17,8 +17,17 @@ final class FAQView: UIView {
         if viewModel.isLoading {
             LoadingView()
         } else {
-            List(viewModel.items) { item in
-                FAQItemView(item: item)
+            VerticalStack {
+                UILabel()
+                    .text("Perguntas frequentes")
+                    .font(.boldSystemFont(ofSize: 18))
+                    .padding(.bottom, 20)
+
+                List(viewModel.items) { item in
+                    FAQItemView(item: item)
+                }
+
+                Spacer()
             }
         }
     }
