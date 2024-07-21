@@ -23,7 +23,7 @@ final class FAQView: UIView {
                     .font(.boldSystemFont(ofSize: 18))
                     .padding(.bottom, 20)
 
-                List(viewModel.items) { item in
+                ForEach(viewModel.items) { item in
                     FAQItemView(item: item)
                 }
 

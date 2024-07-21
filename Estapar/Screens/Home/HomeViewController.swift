@@ -14,6 +14,15 @@ final class HomeViewController: UIViewController {
 
     var body: UIView {
         HelpCenterView(viewModel: viewModel.helpCenterViewModel)
+
+//        VerticalStack {
+//            let viewModel = FAQItemViewModel(category: "Category",
+//                                             questions: ["First question", "Second question"])
+//            FAQItemView(item: viewModel)
+//            FAQItemView(item: viewModel)
+//            Spacer()
+//        }
+
     }
 
     init(viewModel: HomeViewModel) {

@@ -18,7 +18,14 @@ final class FAQItemView: UIView {
                 .font(.boldSystemFont(ofSize: 18))
                 .textColor(.blue)
                 .onTapGesture { [weak self] in
-                    self?.itemsStack.isHidden.toggle()
+                    UIView.animate(withDuration: 0.2,
+                                   delay: 0.0,
+                                   options: .curveEaseIn,
+                                   animations:
+                                    {
+                        self?.itemsStack.isHidden.toggle()
+                        self?.layoutIfNeeded()
+                    }) { _ in }
                 }
 
             itemsStack
@@ -26,13 +33,13 @@ final class FAQItemView: UIView {
         }
     }
 
-    var itemsStack: VerticalStack {
+    lazy var itemsStack: UIView = {
         VerticalStack {
             ForEach(item.questions) { question in
                 UILabel().text(question)
             }
         }
-    }
+    }()
 
     init(item: FAQItemViewModel) {
         self.item = item
