@@ -54,8 +54,11 @@ extension UIView {
     }
 
     @discardableResult
-    func becomeResponder() -> Self {
-        self.becomeFirstResponder()
+    func bordered() -> Self {
+        layer.cornerRadius = 5
+        layer.masksToBounds = true
+        layer.borderColor = UIColor.lightGray.cgColor
+        layer.borderWidth = 1.0
         return self
     }
 }

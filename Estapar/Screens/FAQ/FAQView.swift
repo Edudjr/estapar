@@ -18,25 +18,29 @@ final class FAQView: UIView {
         if viewModel.isLoading {
             LoadingView()
         } else {
-            VerticalStack {
-                UILabel()
-                    .text("Perguntas frequentes")
-                    .font(.boldSystemFont(ofSize: 18))
-                    .padding(.bottom, 20)
+            ScrollView(.vertical) {
+                VerticalStack {
+                    UILabel()
+                        .text("Perguntas frequentes")
+                        .font(.boldSystemFont(ofSize: 18))
+                        .padding(.bottom, 20)
 
-                TextFieldView()
-                    .text(viewModel.appliedSearch)
-                    .onEdit { [weak self] text in
-                        self?.viewModel.appliedSearch = text
+                    TextFieldView()
+                        .text(viewModel.appliedSearch)
+                        .onEdit { [weak self] text in
+                            self?.viewModel.appliedSearch = text
+                        }
+                        .focus()
+                        .padding(.bottom, 8)
+
+                    ForEach(viewModel.items) { item in
+                        FAQItemView(viewModel: item)
+                            .padding(.vertical, 4)
                     }
-                    .focus()
-
-                ForEach(viewModel.items) { item in
-                    FAQItemView(viewModel: item)
                 }
-
-                Spacer()
             }
+            .showsVerticalScrollIndicator(false)
+            .padding(.all, 16)
         }
     }
 

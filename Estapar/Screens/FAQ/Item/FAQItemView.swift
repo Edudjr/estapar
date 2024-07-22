@@ -26,14 +26,29 @@ final class FAQItemView: UIView {
             itemsStack
                 .isHidden(!viewModel.isExpanded)
         }
+        .padding(.all, 8)
+        .bordered()
     }
 
     lazy var itemsStack: UIView = {
         VerticalStack {
+            Separator()
+
             ForEach(viewModel.questions) { question in
-                UILabel().text(question)
+                HorizontalStack {
+                    UILabel()
+                        .text(question)
+                        .numberOfLines(0)
+                    
+                    VerticalStack {
+                        Spacer()
+                        ArrowView()
+                        Spacer()
+                    }
+                }
             }
         }
+        .spacing(8)
     }()
 
     init(viewModel: FAQItemViewModel) {

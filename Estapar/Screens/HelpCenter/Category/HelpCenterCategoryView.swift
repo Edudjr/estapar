@@ -24,12 +24,9 @@ class HelpCenterCategoryView: UIView {
                     .text("\(articlesNumber) artigos")
                     .font(.systemFont(ofSize: 12))
 
-                UIImageView(image: UIImage(systemName: "arrow.right"))
-                    .contentMode(.scaleAspectFit)
-                    .set(contentHuggingPriority: .defaultHigh, for: .horizontal)
-                    .padding(.leading, 20)
+                ArrowView()
             }
-            .alignment(.top)
+            .alignment(.center)
             .padding(.leading, 10)
         }
         .backgroundColor(.white)
