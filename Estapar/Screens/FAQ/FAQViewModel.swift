@@ -5,6 +5,7 @@
 //  Created by Eduardo Domene Junior on 21/07/24.
 //
 
+import Combine
 import Foundation
 
 final class FAQViewModel {
@@ -26,24 +27,33 @@ final class FAQViewModel {
     @Published var items = [FAQItemViewModel]()
     @Published var isLoading = true
 
+    private var cancellables = Set<AnyCancellable>()
+
     init(categoryId: String, helpCenter: HelpCenterProtocol) {
         self.categoryId = categoryId
         self.helpCenter = helpCenter
+        bind()
         loadItems()
     }
 
     func loadItems() {
-//        Task {
-//            isLoading = true
-//            do {
-//                let items = try await helpCenter.faq(forCategoryID: categoryId)
-//                self.unfilteredItems = items.map(FAQItemViewModel.init)
-//            } catch {
-//                // TODO: handle error
-//                print(error)
-//            }
-//            isLoading = false
-//        }
+        helpCenter.requestFAQItems(forCategoryID: categoryId)
+    }
+
+    private func bind() {
+        helpCenter.faqItemsPublisher
+            .compactMap { $0 }
+            .sink { [weak self] items in
+                self?.items = items.map(FAQItemViewModel.init)
+            }
+            .store(in: &cancellables)
+
+        helpCenter.isLoadingPublisher
+            .compactMap { $0 }
+            .sink { [weak self] isLoading in
+                self?.isLoading = isLoading
+            }
+            .store(in: &cancellables)
     }
 
     private func filterFAQ(containing text: String) {
