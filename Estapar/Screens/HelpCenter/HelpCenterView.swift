@@ -8,6 +8,7 @@
 import Combine
 import UIKit
 import DeclarativeUIKit
+import Kingfisher
 
 final class HelpCenterView: UIView {
 
@@ -31,7 +32,25 @@ final class HelpCenterView: UIView {
             .header {
                 HelpCenterWelcomeMessage(name: "Eduardo")
             }
+            .headerBackground { [weak self] in
+//                UIView().backgroundColor(.blue)
+
+                if let image = self?.viewModel.headerBackgroundImage {
+                    let url = URL(string: image)!
+                    let imageView = UIImageView()
+                        .contentMode(.scaleAspectFill)
+                        .set(contentHuggingPriority: .defaultHigh, for: .vertical)
+                        .set(compressionResistance: .defaultLow, for: .vertical)
+                        .clipsToBounds(true)
+
+                    imageView.kf.setImage(with: url)
+                    return imageView
+                } else {
+                    return UIView()
+                }
+            }
             .asUIView()
+            .backgroundColor(.white)
         }
     }
 
@@ -41,6 +60,10 @@ final class HelpCenterView: UIView {
         add(body)
         bind()
         loadCategories()
+        DispatchQueue.main.async {
+            self.parentViewController?.title = "Central de ajuda"
+
+        }
     }
 
     required init?(coder: NSCoder) {

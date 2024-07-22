@@ -14,4 +14,10 @@ extension UIViewController {
             self
         }
     }
+
+    func show(_ view: UIView) {
+        let viewController = UIViewController(nibName: nil, bundle: nil)
+        viewController.view.add(view)
+        show(viewController, sender: self)
+    }
 }

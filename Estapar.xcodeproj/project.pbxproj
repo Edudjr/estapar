@@ -45,12 +45,18 @@
 		20EAAE342C4E02A8003A68D8 /* FAQItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE332C4E02A8003A68D8 /* FAQItem.swift */; };
 		20EAAE362C4E051E003A68D8 /* FAQSectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE352C4E051E003A68D8 /* FAQSectionDTO.swift */; };
 		20EAAE382C4E0579003A68D8 /* FAQArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE372C4E0579003A68D8 /* FAQArticleDTO.swift */; };
-		20EAAE3A2C4E05D8003A68D8 /* CategoryIDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE392C4E05D8003A68D8 /* CategoryIDResponse.swift */; };
+		20EAAE3A2C4E05D8003A68D8 /* FAQResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE392C4E05D8003A68D8 /* FAQResponseDTO.swift */; };
 		20EAAE3C2C4E07A7003A68D8 /* HeaderDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE3B2C4E07A7003A68D8 /* HeaderDTO.swift */; };
 		20EAAE3E2C4E07BA003A68D8 /* ImageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE3D2C4E07BA003A68D8 /* ImageDTO.swift */; };
 		20EAAE402C4E0850003A68D8 /* HelpCenterCategoryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE3F2C4E0850003A68D8 /* HelpCenterCategoryEndpoint.swift */; };
 		20EAAE422C4E163B003A68D8 /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE412C4E163B003A68D8 /* ArrowView.swift */; };
 		20EAAE442C4E1FD0003A68D8 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE432C4E1FD0003A68D8 /* Separator.swift */; };
+		20EAAE462C4E2F2B003A68D8 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE452C4E2F2B003A68D8 /* UINavigationController+Extensions.swift */; };
+		20EAAE492C4E325C003A68D8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 20EAAE482C4E325C003A68D8 /* Kingfisher */; };
+		20EAAE4B2C4E3FAF003A68D8 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE4A2C4E3FAF003A68D8 /* UILabel+Extensions.swift */; };
+		20EAAE4E2C4E3FD0003A68D8 /* FontScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE4D2C4E3FD0003A68D8 /* FontScheme.swift */; };
+		20EAAE502C4E3FE6003A68D8 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE4F2C4E3FE6003A68D8 /* ColorScheme.swift */; };
+		20EAAE522C4E9443003A68D8 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE512C4E9443003A68D8 /* Header.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,12 +118,17 @@
 		20EAAE332C4E02A8003A68D8 /* FAQItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItem.swift; sourceTree = "<group>"; };
 		20EAAE352C4E051E003A68D8 /* FAQSectionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSectionDTO.swift; sourceTree = "<group>"; };
 		20EAAE372C4E0579003A68D8 /* FAQArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQArticleDTO.swift; sourceTree = "<group>"; };
-		20EAAE392C4E05D8003A68D8 /* CategoryIDResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIDResponse.swift; sourceTree = "<group>"; };
+		20EAAE392C4E05D8003A68D8 /* FAQResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQResponseDTO.swift; sourceTree = "<group>"; };
 		20EAAE3B2C4E07A7003A68D8 /* HeaderDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDTO.swift; sourceTree = "<group>"; };
 		20EAAE3D2C4E07BA003A68D8 /* ImageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDTO.swift; sourceTree = "<group>"; };
 		20EAAE3F2C4E0850003A68D8 /* HelpCenterCategoryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterCategoryEndpoint.swift; sourceTree = "<group>"; };
 		20EAAE412C4E163B003A68D8 /* ArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
 		20EAAE432C4E1FD0003A68D8 /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
+		20EAAE452C4E2F2B003A68D8 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		20EAAE4A2C4E3FAF003A68D8 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		20EAAE4D2C4E3FD0003A68D8 /* FontScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontScheme.swift; sourceTree = "<group>"; };
+		20EAAE4F2C4E3FE6003A68D8 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		20EAAE512C4E9443003A68D8 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20EAAE492C4E325C003A68D8 /* Kingfisher in Frameworks */,
 				20EAADED2C49F9AB003A68D8 /* DeclarativeUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +182,7 @@
 		20EAADB52C49DBE5003A68D8 /* Estapar */ = {
 			isa = PBXGroup;
 			children = (
+				20EAAE4C2C4E3FC3003A68D8 /* DesignSystem */,
 				20EAAE302C4DFFB2003A68D8 /* API */,
 				20EAAE1C2C4DE001003A68D8 /* Network */,
 				20EAAE052C4A74D9003A68D8 /* Extensions */,
@@ -235,6 +248,7 @@
 				20EAADF42C4A2344003A68D8 /* HelpCenterModel.swift */,
 				20EAAE312C4E028A003A68D8 /* HelpCenterCategory.swift */,
 				20EAAE332C4E02A8003A68D8 /* FAQItem.swift */,
+				20EAAE512C4E9443003A68D8 /* Header.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,6 +281,8 @@
 				20EAAE062C4A74E7003A68D8 /* UIViewController+Extensions.swift */,
 				20EAAE082C4A752C003A68D8 /* ScrollView+Extensions.swift */,
 				20EAAE0A2C4C6BD8003A68D8 /* UIView+Extensions.swift */,
+				20EAAE452C4E2F2B003A68D8 /* UINavigationController+Extensions.swift */,
+				20EAAE4A2C4E3FAF003A68D8 /* UILabel+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -325,7 +341,7 @@
 				20EAAE2B2C4DFB2E003A68D8 /* CategoriesResponseDTO.swift */,
 				20EAAE352C4E051E003A68D8 /* FAQSectionDTO.swift */,
 				20EAAE372C4E0579003A68D8 /* FAQArticleDTO.swift */,
-				20EAAE392C4E05D8003A68D8 /* CategoryIDResponse.swift */,
+				20EAAE392C4E05D8003A68D8 /* FAQResponseDTO.swift */,
 				20EAAE3B2C4E07A7003A68D8 /* HeaderDTO.swift */,
 				20EAAE3D2C4E07BA003A68D8 /* ImageDTO.swift */,
 			);
@@ -351,6 +367,15 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		20EAAE4C2C4E3FC3003A68D8 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				20EAAE4D2C4E3FD0003A68D8 /* FontScheme.swift */,
+				20EAAE4F2C4E3FE6003A68D8 /* ColorScheme.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -369,6 +394,7 @@
 			name = Estapar;
 			packageProductDependencies = (
 				20EAADEC2C49F9AB003A68D8 /* DeclarativeUIKit */,
+				20EAAE482C4E325C003A68D8 /* Kingfisher */,
 			);
 			productName = Estapar;
 			productReference = 20EAADB32C49DBE5003A68D8 /* Estapar.app */;
@@ -444,6 +470,7 @@
 			mainGroup = 20EAADAA2C49DBE5003A68D8;
 			packageReferences = (
 				20EAADEB2C49F9AB003A68D8 /* XCRemoteSwiftPackageReference "DeclarativeUIKit" */,
+				20EAAE472C4E325C003A68D8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 20EAADB42C49DBE5003A68D8 /* Products */;
 			projectDirPath = "";
@@ -497,9 +524,12 @@
 				20EAAE092C4A752C003A68D8 /* ScrollView+Extensions.swift in Sources */,
 				20EAADBB2C49DBE5003A68D8 /* HomeViewController.swift in Sources */,
 				20EAADF22C4A1D84003A68D8 /* CollectionView.swift in Sources */,
+				20EAAE502C4E3FE6003A68D8 /* ColorScheme.swift in Sources */,
 				20EAAE202C4DE50E003A68D8 /* Environment.swift in Sources */,
+				20EAAE522C4E9443003A68D8 /* Header.swift in Sources */,
 				20EAAE1B2C4DD44B003A68D8 /* TextFieldView.swift in Sources */,
 				20EAAE242C4DE550003A68D8 /* NetworkError.swift in Sources */,
+				20EAAE462C4E2F2B003A68D8 /* UINavigationController+Extensions.swift in Sources */,
 				20EAAE022C4A4006003A68D8 /* HelpCenterView.swift in Sources */,
 				20EAAE162C4CB1D6003A68D8 /* FAQItemView.swift in Sources */,
 				20EAADFD2C4A2631003A68D8 /* HelpCenterCategoryViewModel.swift in Sources */,
@@ -511,17 +541,19 @@
 				20EAAE102C4CA946003A68D8 /* HelpCenterViewModel.swift in Sources */,
 				20EAADB92C49DBE5003A68D8 /* SceneDelegate.swift in Sources */,
 				20EAADEF2C49FA73003A68D8 /* HelpCenterCategoryView.swift in Sources */,
+				20EAAE4E2C4E3FD0003A68D8 /* FontScheme.swift in Sources */,
 				20EAAE222C4DE53A003A68D8 /* Endpoint.swift in Sources */,
 				20EAAE182C4CB1F6003A68D8 /* FAQItemViewModel.swift in Sources */,
 				20EAAE2F2C4DFB73003A68D8 /* HelpCenterCategoriesEndpoint.swift in Sources */,
 				20EAAE402C4E0850003A68D8 /* HelpCenterCategoryEndpoint.swift in Sources */,
 				20EAAE2C2C4DFB2E003A68D8 /* CategoriesResponseDTO.swift in Sources */,
 				20EAAE3C2C4E07A7003A68D8 /* HeaderDTO.swift in Sources */,
-				20EAAE3A2C4E05D8003A68D8 /* CategoryIDResponse.swift in Sources */,
+				20EAAE3A2C4E05D8003A68D8 /* FAQResponseDTO.swift in Sources */,
 				20EAAE342C4E02A8003A68D8 /* FAQItem.swift in Sources */,
 				20EAADF72C4A24DF003A68D8 /* LoadingView.swift in Sources */,
 				20EAAE3E2C4E07BA003A68D8 /* ImageDTO.swift in Sources */,
 				20EAAE382C4E0579003A68D8 /* FAQArticleDTO.swift in Sources */,
+				20EAAE4B2C4E3FAF003A68D8 /* UILabel+Extensions.swift in Sources */,
 				20EAAE142C4CB1C0003A68D8 /* FAQViewModel.swift in Sources */,
 				20EAAE0E2C4C9E49003A68D8 /* FAQView.swift in Sources */,
 				20EAADF52C4A2344003A68D8 /* HelpCenterModel.swift in Sources */,
@@ -873,6 +905,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		20EAAE472C4E325C003A68D8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -880,6 +920,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 20EAADEB2C49F9AB003A68D8 /* XCRemoteSwiftPackageReference "DeclarativeUIKit" */;
 			productName = DeclarativeUIKit;
+		};
+		20EAAE482C4E325C003A68D8 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20EAAE472C4E325C003A68D8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,5 +1,5 @@
 //
-//  CategoryIDResponse.swift
+//  FAQResponseDTO.swift
 //  Estapar
 //
 //  Created by Eduardo Domene Junior on 22/07/24.

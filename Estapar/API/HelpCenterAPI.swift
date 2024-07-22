@@ -17,6 +17,8 @@ struct HelpCenterAPI: HelpCenterAPIProtocol {
     let networkManager: NetworkManagerProtocol
 
     func categories() async throws -> CategoriesResponseDTO {
+        // TODO: remove sleep
+        try? await Task.sleep(for: .seconds(1))
         let endpoint = HelpCenterCategoriesEndpoint()
         let response = try await networkManager.request(baseURL: baseURL,
                                                         endpoint: endpoint,
@@ -25,6 +27,8 @@ struct HelpCenterAPI: HelpCenterAPIProtocol {
     }
 
     func faq(forCategoryID categoryID: String) async throws -> FAQResponseDTO {
+        // TODO: remove sleep
+        try? await Task.sleep(for: .seconds(1))
         let endpoint = HelpCenterCategoryEndpoint(categoryID: categoryID)
         let response = try await networkManager.request(baseURL: baseURL,
                                                         endpoint: endpoint,

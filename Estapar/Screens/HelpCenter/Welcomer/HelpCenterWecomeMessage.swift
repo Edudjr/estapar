@@ -15,12 +15,15 @@ final class HelpCenterWelcomeMessage: UIView {
         VerticalStack {
             UILabel()
                 .text("Olá, \(name) 👋")
-
+                .font(.h4)
+                .textColor(.zulPrimary200)
+           
             UILabel()
                 .text("Como podemos ajudar?")
+                .font(.h4)
+                .textColor(.primary)
         }
         .padding(.all, 15)
-        .backgroundColor(.white)
     }
 
     init(name: String) {

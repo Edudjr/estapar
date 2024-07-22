@@ -12,13 +12,19 @@ final class CollectionView<Data>: UIViewController, UICollectionViewDataSource, 
 where Data: RandomAccessCollection {
 
     private let collection: Data
-    private var headerBuilder: (() -> UIView)?
+   
     private let builder: (Data.Element) -> [UIView]
     private let layout: CollectionViewLayout
     private var collectionview: UICollectionView?
-    private var headerTopPadding: CGFloat = 40
 
     private var headerView: UIView?
+    private var headerBuilder: (() -> UIView)?
+    private var headerBackgroundBuilder: (() -> UIView)?
+
+    private var headerTopPadding: CGFloat = 0
+    private var totalHeaderHeight: CGFloat {
+        (headerView?.bounds.size.height ?? 0.0) + headerTopPadding
+    }
 
     public init(_ collection: Data,
                 layout: CollectionViewLayout = CollectionViewLayout(itemsPerRow: 2),
@@ -61,19 +67,44 @@ where Data: RandomAccessCollection {
         view.add(collectionview).backgroundColor(.white)
 
         // Initialize and configure the header view
+        setupHeader()
+    }
 
-        guard let header = headerBuilder?() else { return }
+    private func setupHeader() {
+        guard
+            let collectionview,
+            let header = headerBuilder?()
+        else {
+            return
+        }
+        
         headerView = header
 
         // Set up initial constraints for the header view
         collectionview
             .addSubview(header)
-        
+
         header
             .connect(\.leadingAnchor, to: collectionview.leadingAnchor)
             .connect(\.trailingAnchor, to: collectionview.trailingAnchor)
             .connect(\.topAnchor, to: collectionview.topAnchor, padding: headerTopPadding)
             .connect(\.widthAnchor, to: collectionview.widthAnchor)
+
+        guard
+            let headerBackground = headerBackgroundBuilder?()
+        else {
+            return
+        }
+
+        headerBackground.translatesAutoresizingMaskIntoConstraints = false
+        collectionview.addSubview(headerBackground)
+        headerBackground
+            .connect(\.topAnchor, to: view.topAnchor)
+            .connect(\.leadingAnchor, to: header.leadingAnchor)
+            .connect(\.trailingAnchor, to: header.trailingAnchor)
+            .connect(\.bottomAnchor, to: header.bottomAnchor)
+
+        collectionview.bringSubviewToFront(header)
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -119,7 +150,6 @@ where Data: RandomAccessCollection {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        let totalHeaderHeight = (headerView?.bounds.size.height ?? 0.0) + headerTopPadding
         return UIEdgeInsets(top: totalHeaderHeight, left: 15, bottom: 0, right: 15)
     }
 
@@ -139,9 +169,15 @@ where Data: RandomAccessCollection {
     }
 
     @discardableResult
-    func header(topPadding: CGFloat = 40, _ builder: @escaping () -> UIView) -> Self {
+    func header(topPadding: CGFloat = 120, _ builder: @escaping () -> UIView) -> Self {
         self.headerTopPadding = topPadding
         headerBuilder = builder
+        return self
+    }
+
+    @discardableResult
+    func headerBackground(_ builder: @escaping () -> UIView) -> Self {
+        self.headerBackgroundBuilder = builder
         return self
     }
 }

@@ -13,16 +13,27 @@ final class HomeViewController: UIViewController {
     private let viewModel: HomeViewModel
 
     var body: UIView {
-        HelpCenterView(viewModel: viewModel.helpCenterViewModel)
+        VerticalStack {
+            Spacer()
 
-//        VerticalStack {
-//            let viewModel = FAQItemViewModel(category: "Category",
-//                                             questions: ["First question", "Second question"])
-//            FAQItemView(item: viewModel)
-//            FAQItemView(item: viewModel)
-//            Spacer()
-//        }
+            UILabel()
+                .text("Abrir central de ajuda")
+                .textColor(.blue)
+                .textAlignment(.center)
+                .padding(.all, 8)
+                .bordered()
+                .onTapGesture { [weak self] in
+                    guard let self else { return }
 
+                    let view = HelpCenterView(viewModel: viewModel.helpCenterViewModel)
+                    let navigation = UINavigationController(rootView: view).setDefaultAppearance()
+
+                    self.show(navigation, sender: nil)
+                }
+
+            Spacer()
+        }
+        .padding(.all, 16)
     }
 
     init(viewModel: HomeViewModel) {

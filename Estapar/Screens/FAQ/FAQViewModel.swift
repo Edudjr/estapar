@@ -33,17 +33,17 @@ final class FAQViewModel {
     }
 
     func loadItems() {
-        Task {
-            isLoading = true
-            do {
-                let items = try await helpCenter.faq(forCategoryID: categoryId)
-                self.unfilteredItems = items.map(FAQItemViewModel.init)
-            } catch {
-                // TODO: handle error
-                print(error)
-            }
-            isLoading = false
-        }
+//        Task {
+//            isLoading = true
+//            do {
+//                let items = try await helpCenter.faq(forCategoryID: categoryId)
+//                self.unfilteredItems = items.map(FAQItemViewModel.init)
+//            } catch {
+//                // TODO: handle error
+//                print(error)
+//            }
+//            isLoading = false
+//        }
     }
 
     private func filterFAQ(containing text: String) {

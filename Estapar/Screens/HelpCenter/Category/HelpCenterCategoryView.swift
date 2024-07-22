@@ -27,10 +27,10 @@ class HelpCenterCategoryView: UIView {
                 ArrowView()
             }
             .alignment(.center)
-            .padding(.leading, 10)
         }
+        .padding(.all, 10)
         .backgroundColor(.white)
-        .dropShadow()
+        .bordered()
     }()
 
     private let title: String
