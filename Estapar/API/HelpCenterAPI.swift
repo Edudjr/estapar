@@ -1,5 +1,5 @@
 //
-//  ZulAPI.swift
+//  HelpCenterAPI.swift
 //  Estapar
 //
 //  Created by Eduardo Domene Junior on 21/07/24.
@@ -9,7 +9,7 @@ import Foundation
 
 protocol HelpCenterAPIProtocol {
     func categories() async throws -> CategoriesResponseDTO
-    func faq(forCategoryID: String) async throws -> CategoryIDResponseDTO
+    func faq(forCategoryID: String) async throws -> FAQResponseDTO
 }
 
 struct HelpCenterAPI: HelpCenterAPIProtocol {
@@ -24,11 +24,11 @@ struct HelpCenterAPI: HelpCenterAPIProtocol {
         return response
     }
 
-    func faq(forCategoryID categoryID: String) async throws -> CategoryIDResponseDTO {
+    func faq(forCategoryID categoryID: String) async throws -> FAQResponseDTO {
         let endpoint = HelpCenterCategoryEndpoint(categoryID: categoryID)
         let response = try await networkManager.request(baseURL: baseURL,
                                                         endpoint: endpoint,
-                                                        type: CategoryIDResponseDTO.self)
+                                                        type: FAQResponseDTO.self)
         return response
     }
 }

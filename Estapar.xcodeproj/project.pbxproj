@@ -43,8 +43,8 @@
 		20EAAE2F2C4DFB73003A68D8 /* HelpCenterCategoriesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE2E2C4DFB73003A68D8 /* HelpCenterCategoriesEndpoint.swift */; };
 		20EAAE322C4E028A003A68D8 /* HelpCenterCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE312C4E028A003A68D8 /* HelpCenterCategory.swift */; };
 		20EAAE342C4E02A8003A68D8 /* FAQItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE332C4E02A8003A68D8 /* FAQItem.swift */; };
-		20EAAE362C4E051E003A68D8 /* CategorySectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE352C4E051E003A68D8 /* CategorySectionDTO.swift */; };
-		20EAAE382C4E0579003A68D8 /* CategoryArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE372C4E0579003A68D8 /* CategoryArticleDTO.swift */; };
+		20EAAE362C4E051E003A68D8 /* FAQSectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE352C4E051E003A68D8 /* FAQSectionDTO.swift */; };
+		20EAAE382C4E0579003A68D8 /* FAQArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE372C4E0579003A68D8 /* FAQArticleDTO.swift */; };
 		20EAAE3A2C4E05D8003A68D8 /* CategoryIDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE392C4E05D8003A68D8 /* CategoryIDResponse.swift */; };
 		20EAAE3C2C4E07A7003A68D8 /* HeaderDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE3B2C4E07A7003A68D8 /* HeaderDTO.swift */; };
 		20EAAE3E2C4E07BA003A68D8 /* ImageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE3D2C4E07BA003A68D8 /* ImageDTO.swift */; };
@@ -108,8 +108,8 @@
 		20EAAE2E2C4DFB73003A68D8 /* HelpCenterCategoriesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterCategoriesEndpoint.swift; sourceTree = "<group>"; };
 		20EAAE312C4E028A003A68D8 /* HelpCenterCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterCategory.swift; sourceTree = "<group>"; };
 		20EAAE332C4E02A8003A68D8 /* FAQItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItem.swift; sourceTree = "<group>"; };
-		20EAAE352C4E051E003A68D8 /* CategorySectionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySectionDTO.swift; sourceTree = "<group>"; };
-		20EAAE372C4E0579003A68D8 /* CategoryArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryArticleDTO.swift; sourceTree = "<group>"; };
+		20EAAE352C4E051E003A68D8 /* FAQSectionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSectionDTO.swift; sourceTree = "<group>"; };
+		20EAAE372C4E0579003A68D8 /* FAQArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQArticleDTO.swift; sourceTree = "<group>"; };
 		20EAAE392C4E05D8003A68D8 /* CategoryIDResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIDResponse.swift; sourceTree = "<group>"; };
 		20EAAE3B2C4E07A7003A68D8 /* HeaderDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDTO.swift; sourceTree = "<group>"; };
 		20EAAE3D2C4E07BA003A68D8 /* ImageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDTO.swift; sourceTree = "<group>"; };
@@ -317,8 +317,8 @@
 			children = (
 				20EAAE292C4DFB18003A68D8 /* CategoryDTO.swift */,
 				20EAAE2B2C4DFB2E003A68D8 /* CategoriesResponseDTO.swift */,
-				20EAAE352C4E051E003A68D8 /* CategorySectionDTO.swift */,
-				20EAAE372C4E0579003A68D8 /* CategoryArticleDTO.swift */,
+				20EAAE352C4E051E003A68D8 /* FAQSectionDTO.swift */,
+				20EAAE372C4E0579003A68D8 /* FAQArticleDTO.swift */,
 				20EAAE392C4E05D8003A68D8 /* CategoryIDResponse.swift */,
 				20EAAE3B2C4E07A7003A68D8 /* HeaderDTO.swift */,
 				20EAAE3D2C4E07BA003A68D8 /* ImageDTO.swift */,
@@ -499,7 +499,7 @@
 				20EAADB72C49DBE5003A68D8 /* AppDelegate.swift in Sources */,
 				20EAAE2A2C4DFB18003A68D8 /* CategoryDTO.swift in Sources */,
 				20EAADF92C4A2597003A68D8 /* HomeViewModel.swift in Sources */,
-				20EAAE362C4E051E003A68D8 /* CategorySectionDTO.swift in Sources */,
+				20EAAE362C4E051E003A68D8 /* FAQSectionDTO.swift in Sources */,
 				20EAAE102C4CA946003A68D8 /* HelpCenterViewModel.swift in Sources */,
 				20EAADB92C49DBE5003A68D8 /* SceneDelegate.swift in Sources */,
 				20EAADEF2C49FA73003A68D8 /* HelpCenterCategoryView.swift in Sources */,
@@ -513,7 +513,7 @@
 				20EAAE342C4E02A8003A68D8 /* FAQItem.swift in Sources */,
 				20EAADF72C4A24DF003A68D8 /* LoadingView.swift in Sources */,
 				20EAAE3E2C4E07BA003A68D8 /* ImageDTO.swift in Sources */,
-				20EAAE382C4E0579003A68D8 /* CategoryArticleDTO.swift in Sources */,
+				20EAAE382C4E0579003A68D8 /* FAQArticleDTO.swift in Sources */,
 				20EAAE142C4CB1C0003A68D8 /* FAQViewModel.swift in Sources */,
 				20EAAE0E2C4C9E49003A68D8 /* FAQView.swift in Sources */,
 				20EAADF52C4A2344003A68D8 /* HelpCenterModel.swift in Sources */,

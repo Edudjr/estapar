@@ -11,7 +11,7 @@ struct FAQItem {
 }
 
 extension FAQItem {
-    init?(_ dto: CategorySectionDTO) {
+    init?(_ dto: FAQSectionDTO) {
         guard
             let category = dto.title,
             let questions = dto.items?.compactMap(\.title)
