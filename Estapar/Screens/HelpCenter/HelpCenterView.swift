@@ -33,8 +33,6 @@ final class HelpCenterView: UIView {
                 HelpCenterWelcomeMessage(name: "Eduardo")
             }
             .headerBackground { [weak self] in
-//                UIView().backgroundColor(.blue)
-
                 if let image = self?.viewModel.headerBackgroundImage {
                     let url = URL(string: image)!
                     let imageView = UIImageView()
@@ -87,23 +85,3 @@ final class HelpCenterView: UIView {
         viewModel.loadCategories()
     }
 }
-//
-//// TODO: move to another file
-//public class ZStack: UIView {
-//    public init() {
-//        super.init(frame: CGRect.zero)
-//    }
-//
-//    required init(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//}
-//
-//public extension ZStack {
-//    convenience init(@DeclarativeViewBuilder builder: () -> [UIView]) {
-//        self.init()
-//        for innerView in builder() {
-//            add(innerView)
-//        }
-//    }
-//}

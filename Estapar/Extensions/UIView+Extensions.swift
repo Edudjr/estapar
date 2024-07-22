@@ -55,10 +55,16 @@ extension UIView {
 
     @discardableResult
     func bordered() -> Self {
-        layer.cornerRadius = 5
-        layer.masksToBounds = true
+        rounded()
         layer.borderColor = UIColor.lightGray.cgColor
         layer.borderWidth = 1.0
+        return self
+    }
+
+    @discardableResult
+    func rounded(_ cornerRadius: CGFloat = 5) -> Self {
+        layer.cornerRadius = cornerRadius
+        layer.masksToBounds = true
         return self
     }
 }

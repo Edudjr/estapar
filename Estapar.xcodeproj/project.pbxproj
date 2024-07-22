@@ -57,6 +57,8 @@
 		20EAAE4E2C4E3FD0003A68D8 /* FontScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE4D2C4E3FD0003A68D8 /* FontScheme.swift */; };
 		20EAAE502C4E3FE6003A68D8 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE4F2C4E3FE6003A68D8 /* ColorScheme.swift */; };
 		20EAAE522C4E9443003A68D8 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE512C4E9443003A68D8 /* Header.swift */; };
+		20EAAE542C4F16FF003A68D8 /* TopNotch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE532C4F16FF003A68D8 /* TopNotch.swift */; };
+		20EAAE562C4F171D003A68D8 /* ZStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE552C4F171D003A68D8 /* ZStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,8 @@
 		20EAAE4D2C4E3FD0003A68D8 /* FontScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontScheme.swift; sourceTree = "<group>"; };
 		20EAAE4F2C4E3FE6003A68D8 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		20EAAE512C4E9443003A68D8 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		20EAAE532C4F16FF003A68D8 /* TopNotch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNotch.swift; sourceTree = "<group>"; };
+		20EAAE552C4F171D003A68D8 /* ZStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +242,8 @@
 				20EAADF62C4A24DF003A68D8 /* LoadingView.swift */,
 				20EAAE432C4E1FD0003A68D8 /* Separator.swift */,
 				20EAAE1A2C4DD44B003A68D8 /* TextFieldView.swift */,
+				20EAAE532C4F16FF003A68D8 /* TopNotch.swift */,
+				20EAAE552C4F171D003A68D8 /* ZStack.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -517,7 +523,9 @@
 				20EAAE0B2C4C6BD8003A68D8 /* UIView+Extensions.swift in Sources */,
 				20EAAE042C4A7495003A68D8 /* HelpCenterWecomeMessage.swift in Sources */,
 				20EAAE272C4DF73F003A68D8 /* HelpCenterAPI.swift in Sources */,
+				20EAAE562C4F171D003A68D8 /* ZStack.swift in Sources */,
 				20EAAE072C4A74E7003A68D8 /* UIViewController+Extensions.swift in Sources */,
+				20EAAE542C4F16FF003A68D8 /* TopNotch.swift in Sources */,
 				20EAAE422C4E163B003A68D8 /* ArrowView.swift in Sources */,
 				20EAAE1E2C4DE010003A68D8 /* NetworkManager.swift in Sources */,
 				20EAAE322C4E028A003A68D8 /* HelpCenterCategory.swift in Sources */,

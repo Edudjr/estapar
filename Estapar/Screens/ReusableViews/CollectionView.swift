@@ -62,7 +62,7 @@ where Data: RandomAccessCollection {
                                 withReuseIdentifier: ReusableCollectionViewCell.reuseIdentifier)
 
         collectionview.showsVerticalScrollIndicator = false
-        collectionview.backgroundColor = UIColor.white
+        collectionview.backgroundColor = UIColor.clear
 
         view.add(collectionview).backgroundColor(.white)
 
@@ -80,6 +80,21 @@ where Data: RandomAccessCollection {
         
         headerView = header
 
+        // MARK: Rounded Notch
+        let notch = TopNotch()
+
+        view
+            .addSubview(notch)
+
+        notch
+            .connect(\.leadingAnchor, to: view.leadingAnchor)
+            .connect(\.trailingAnchor, to: view.trailingAnchor)
+            .set(\.heightAnchor, to: 20)
+
+        view.bringSubviewToFront(collectionview)
+
+        // MARK: Header
+
         // Set up initial constraints for the header view
         collectionview
             .addSubview(header)
@@ -89,6 +104,7 @@ where Data: RandomAccessCollection {
             .connect(\.trailingAnchor, to: collectionview.trailingAnchor)
             .connect(\.topAnchor, to: collectionview.topAnchor, padding: headerTopPadding)
             .connect(\.widthAnchor, to: collectionview.widthAnchor)
+            .connect(\.bottomAnchor, to: notch.topAnchor)
 
         guard
             let headerBackground = headerBackgroundBuilder?()
@@ -105,6 +121,9 @@ where Data: RandomAccessCollection {
             .connect(\.bottomAnchor, to: header.bottomAnchor)
 
         collectionview.bringSubviewToFront(header)
+
+
+//        collectionview.sendSubviewToBack(body)
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -150,7 +169,9 @@ where Data: RandomAccessCollection {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: totalHeaderHeight, left: 15, bottom: 0, right: 15)
+        let extraPadding = 20.0
+        let totalPadding = totalHeaderHeight + extraPadding
+        return UIEdgeInsets(top: totalPadding, left: 15, bottom: 0, right: 15)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
