@@ -25,7 +25,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func compositionRoot() -> UIViewController {
         
-        let helpCenter = HelpCenter()
+        var baseURL = switch Environment.current {
+        case .development:
+            URL(string: "https://helpcenter.dev.homolog.me")!
+        case .production:
+            // Define correct production URL
+            URL(string: "https://helpcenter.dev.homolog.me")!
+        }
+        
+        let networkManager = NetworkManager()
+        let api = HelpCenterAPI(baseURL: baseURL, networkManager: networkManager)
+        let helpCenter = HelpCenterModel(api: api)
         let homeViewModel = HomeViewModel(helpCenter: helpCenter)
         let homeViewController = HomeViewController(viewModel: homeViewModel)
 
@@ -34,4 +44,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return navigation
     }
 }
+
 

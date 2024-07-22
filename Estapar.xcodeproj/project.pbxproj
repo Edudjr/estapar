@@ -18,7 +18,7 @@
 		20EAADED2C49F9AB003A68D8 /* DeclarativeUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 20EAADEC2C49F9AB003A68D8 /* DeclarativeUIKit */; };
 		20EAADEF2C49FA73003A68D8 /* HelpCenterCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAADEE2C49FA73003A68D8 /* HelpCenterCategoryView.swift */; };
 		20EAADF22C4A1D84003A68D8 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAADF12C4A1D84003A68D8 /* CollectionView.swift */; };
-		20EAADF52C4A2344003A68D8 /* HelpCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAADF42C4A2344003A68D8 /* HelpCenter.swift */; };
+		20EAADF52C4A2344003A68D8 /* HelpCenterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAADF42C4A2344003A68D8 /* HelpCenterModel.swift */; };
 		20EAADF72C4A24DF003A68D8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAADF62C4A24DF003A68D8 /* LoadingView.swift */; };
 		20EAADF92C4A2597003A68D8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAADF82C4A2597003A68D8 /* HomeViewModel.swift */; };
 		20EAADFD2C4A2631003A68D8 /* HelpCenterCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAADFC2C4A2631003A68D8 /* HelpCenterCategoryViewModel.swift */; };
@@ -33,6 +33,22 @@
 		20EAAE162C4CB1D6003A68D8 /* FAQItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE152C4CB1D6003A68D8 /* FAQItemView.swift */; };
 		20EAAE182C4CB1F6003A68D8 /* FAQItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE172C4CB1F6003A68D8 /* FAQItemViewModel.swift */; };
 		20EAAE1B2C4DD44B003A68D8 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE1A2C4DD44B003A68D8 /* TextFieldView.swift */; };
+		20EAAE1E2C4DE010003A68D8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE1D2C4DE010003A68D8 /* NetworkManager.swift */; };
+		20EAAE202C4DE50E003A68D8 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE1F2C4DE50E003A68D8 /* Environment.swift */; };
+		20EAAE222C4DE53A003A68D8 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE212C4DE53A003A68D8 /* Endpoint.swift */; };
+		20EAAE242C4DE550003A68D8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE232C4DE550003A68D8 /* NetworkError.swift */; };
+		20EAAE272C4DF73F003A68D8 /* HelpCenterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE262C4DF73F003A68D8 /* HelpCenterAPI.swift */; };
+		20EAAE2A2C4DFB18003A68D8 /* CategoryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE292C4DFB18003A68D8 /* CategoryDTO.swift */; };
+		20EAAE2C2C4DFB2E003A68D8 /* CategoriesResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE2B2C4DFB2E003A68D8 /* CategoriesResponseDTO.swift */; };
+		20EAAE2F2C4DFB73003A68D8 /* HelpCenterCategoriesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE2E2C4DFB73003A68D8 /* HelpCenterCategoriesEndpoint.swift */; };
+		20EAAE322C4E028A003A68D8 /* HelpCenterCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE312C4E028A003A68D8 /* HelpCenterCategory.swift */; };
+		20EAAE342C4E02A8003A68D8 /* FAQItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE332C4E02A8003A68D8 /* FAQItem.swift */; };
+		20EAAE362C4E051E003A68D8 /* CategorySectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE352C4E051E003A68D8 /* CategorySectionDTO.swift */; };
+		20EAAE382C4E0579003A68D8 /* CategoryArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE372C4E0579003A68D8 /* CategoryArticleDTO.swift */; };
+		20EAAE3A2C4E05D8003A68D8 /* CategoryIDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE392C4E05D8003A68D8 /* CategoryIDResponse.swift */; };
+		20EAAE3C2C4E07A7003A68D8 /* HeaderDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE3B2C4E07A7003A68D8 /* HeaderDTO.swift */; };
+		20EAAE3E2C4E07BA003A68D8 /* ImageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE3D2C4E07BA003A68D8 /* ImageDTO.swift */; };
+		20EAAE402C4E0850003A68D8 /* HelpCenterCategoryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE3F2C4E0850003A68D8 /* HelpCenterCategoryEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +83,7 @@
 		20EAADD92C49DBE7003A68D8 /* EstaparUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstaparUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		20EAADEE2C49FA73003A68D8 /* HelpCenterCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterCategoryView.swift; sourceTree = "<group>"; };
 		20EAADF12C4A1D84003A68D8 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
-		20EAADF42C4A2344003A68D8 /* HelpCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenter.swift; sourceTree = "<group>"; };
+		20EAADF42C4A2344003A68D8 /* HelpCenterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterModel.swift; sourceTree = "<group>"; };
 		20EAADF62C4A24DF003A68D8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		20EAADF82C4A2597003A68D8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		20EAADFC2C4A2631003A68D8 /* HelpCenterCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterCategoryViewModel.swift; sourceTree = "<group>"; };
@@ -82,6 +98,22 @@
 		20EAAE152C4CB1D6003A68D8 /* FAQItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItemView.swift; sourceTree = "<group>"; };
 		20EAAE172C4CB1F6003A68D8 /* FAQItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItemViewModel.swift; sourceTree = "<group>"; };
 		20EAAE1A2C4DD44B003A68D8 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		20EAAE1D2C4DE010003A68D8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		20EAAE1F2C4DE50E003A68D8 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		20EAAE212C4DE53A003A68D8 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		20EAAE232C4DE550003A68D8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		20EAAE262C4DF73F003A68D8 /* HelpCenterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterAPI.swift; sourceTree = "<group>"; };
+		20EAAE292C4DFB18003A68D8 /* CategoryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDTO.swift; sourceTree = "<group>"; };
+		20EAAE2B2C4DFB2E003A68D8 /* CategoriesResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponseDTO.swift; sourceTree = "<group>"; };
+		20EAAE2E2C4DFB73003A68D8 /* HelpCenterCategoriesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterCategoriesEndpoint.swift; sourceTree = "<group>"; };
+		20EAAE312C4E028A003A68D8 /* HelpCenterCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterCategory.swift; sourceTree = "<group>"; };
+		20EAAE332C4E02A8003A68D8 /* FAQItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItem.swift; sourceTree = "<group>"; };
+		20EAAE352C4E051E003A68D8 /* CategorySectionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySectionDTO.swift; sourceTree = "<group>"; };
+		20EAAE372C4E0579003A68D8 /* CategoryArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryArticleDTO.swift; sourceTree = "<group>"; };
+		20EAAE392C4E05D8003A68D8 /* CategoryIDResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIDResponse.swift; sourceTree = "<group>"; };
+		20EAAE3B2C4E07A7003A68D8 /* HeaderDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDTO.swift; sourceTree = "<group>"; };
+		20EAAE3D2C4E07BA003A68D8 /* ImageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDTO.swift; sourceTree = "<group>"; };
+		20EAAE3F2C4E0850003A68D8 /* HelpCenterCategoryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterCategoryEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +166,8 @@
 		20EAADB52C49DBE5003A68D8 /* Estapar */ = {
 			isa = PBXGroup;
 			children = (
+				20EAAE302C4DFFB2003A68D8 /* API */,
+				20EAAE1C2C4DE001003A68D8 /* Network */,
 				20EAAE052C4A74D9003A68D8 /* Extensions */,
 				20EAADF32C4A2336003A68D8 /* Models */,
 				20EAADF02C4A1D6F003A68D8 /* ReusableViews */,
@@ -193,7 +227,9 @@
 		20EAADF32C4A2336003A68D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				20EAADF42C4A2344003A68D8 /* HelpCenter.swift */,
+				20EAADF42C4A2344003A68D8 /* HelpCenterModel.swift */,
+				20EAAE312C4E028A003A68D8 /* HelpCenterCategory.swift */,
+				20EAAE332C4E02A8003A68D8 /* FAQItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,6 +299,50 @@
 				20EAAE172C4CB1F6003A68D8 /* FAQItemViewModel.swift */,
 			);
 			path = Item;
+			sourceTree = "<group>";
+		};
+		20EAAE1C2C4DE001003A68D8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				20EAAE1D2C4DE010003A68D8 /* NetworkManager.swift */,
+				20EAAE1F2C4DE50E003A68D8 /* Environment.swift */,
+				20EAAE212C4DE53A003A68D8 /* Endpoint.swift */,
+				20EAAE232C4DE550003A68D8 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		20EAAE282C4DFB0C003A68D8 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				20EAAE292C4DFB18003A68D8 /* CategoryDTO.swift */,
+				20EAAE2B2C4DFB2E003A68D8 /* CategoriesResponseDTO.swift */,
+				20EAAE352C4E051E003A68D8 /* CategorySectionDTO.swift */,
+				20EAAE372C4E0579003A68D8 /* CategoryArticleDTO.swift */,
+				20EAAE392C4E05D8003A68D8 /* CategoryIDResponse.swift */,
+				20EAAE3B2C4E07A7003A68D8 /* HeaderDTO.swift */,
+				20EAAE3D2C4E07BA003A68D8 /* ImageDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		20EAAE2D2C4DFB5B003A68D8 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				20EAAE2E2C4DFB73003A68D8 /* HelpCenterCategoriesEndpoint.swift */,
+				20EAAE3F2C4E0850003A68D8 /* HelpCenterCategoryEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		20EAAE302C4DFFB2003A68D8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				20EAAE282C4DFB0C003A68D8 /* DTOs */,
+				20EAAE2D2C4DFB5B003A68D8 /* Endpoints */,
+				20EAAE262C4DF73F003A68D8 /* HelpCenterAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,24 +483,40 @@
 			files = (
 				20EAAE0B2C4C6BD8003A68D8 /* UIView+Extensions.swift in Sources */,
 				20EAAE042C4A7495003A68D8 /* HelpCenterWecomeMessage.swift in Sources */,
+				20EAAE272C4DF73F003A68D8 /* HelpCenterAPI.swift in Sources */,
 				20EAAE072C4A74E7003A68D8 /* UIViewController+Extensions.swift in Sources */,
+				20EAAE1E2C4DE010003A68D8 /* NetworkManager.swift in Sources */,
+				20EAAE322C4E028A003A68D8 /* HelpCenterCategory.swift in Sources */,
 				20EAAE092C4A752C003A68D8 /* ScrollView+Extensions.swift in Sources */,
 				20EAADBB2C49DBE5003A68D8 /* HomeViewController.swift in Sources */,
 				20EAADF22C4A1D84003A68D8 /* CollectionView.swift in Sources */,
+				20EAAE202C4DE50E003A68D8 /* Environment.swift in Sources */,
 				20EAAE1B2C4DD44B003A68D8 /* TextFieldView.swift in Sources */,
+				20EAAE242C4DE550003A68D8 /* NetworkError.swift in Sources */,
 				20EAAE022C4A4006003A68D8 /* HelpCenterView.swift in Sources */,
 				20EAAE162C4CB1D6003A68D8 /* FAQItemView.swift in Sources */,
 				20EAADFD2C4A2631003A68D8 /* HelpCenterCategoryViewModel.swift in Sources */,
 				20EAADB72C49DBE5003A68D8 /* AppDelegate.swift in Sources */,
+				20EAAE2A2C4DFB18003A68D8 /* CategoryDTO.swift in Sources */,
 				20EAADF92C4A2597003A68D8 /* HomeViewModel.swift in Sources */,
+				20EAAE362C4E051E003A68D8 /* CategorySectionDTO.swift in Sources */,
 				20EAAE102C4CA946003A68D8 /* HelpCenterViewModel.swift in Sources */,
 				20EAADB92C49DBE5003A68D8 /* SceneDelegate.swift in Sources */,
 				20EAADEF2C49FA73003A68D8 /* HelpCenterCategoryView.swift in Sources */,
+				20EAAE222C4DE53A003A68D8 /* Endpoint.swift in Sources */,
 				20EAAE182C4CB1F6003A68D8 /* FAQItemViewModel.swift in Sources */,
+				20EAAE2F2C4DFB73003A68D8 /* HelpCenterCategoriesEndpoint.swift in Sources */,
+				20EAAE402C4E0850003A68D8 /* HelpCenterCategoryEndpoint.swift in Sources */,
+				20EAAE2C2C4DFB2E003A68D8 /* CategoriesResponseDTO.swift in Sources */,
+				20EAAE3C2C4E07A7003A68D8 /* HeaderDTO.swift in Sources */,
+				20EAAE3A2C4E05D8003A68D8 /* CategoryIDResponse.swift in Sources */,
+				20EAAE342C4E02A8003A68D8 /* FAQItem.swift in Sources */,
 				20EAADF72C4A24DF003A68D8 /* LoadingView.swift in Sources */,
+				20EAAE3E2C4E07BA003A68D8 /* ImageDTO.swift in Sources */,
+				20EAAE382C4E0579003A68D8 /* CategoryArticleDTO.swift in Sources */,
 				20EAAE142C4CB1C0003A68D8 /* FAQViewModel.swift in Sources */,
 				20EAAE0E2C4C9E49003A68D8 /* FAQView.swift in Sources */,
-				20EAADF52C4A2344003A68D8 /* HelpCenter.swift in Sources */,
+				20EAADF52C4A2344003A68D8 /* HelpCenterModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

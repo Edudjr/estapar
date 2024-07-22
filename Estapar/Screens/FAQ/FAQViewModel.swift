@@ -29,13 +29,19 @@ final class FAQViewModel {
     init(categoryId: String, helpCenter: HelpCenterProtocol) {
         self.categoryId = categoryId
         self.helpCenter = helpCenter
+        loadItems()
     }
 
     func loadItems() {
         Task {
             isLoading = true
-            let items = await helpCenter.faq(forCategoryId: categoryId)
-            self.unfilteredItems = items.map(FAQItemViewModel.init)
+            do {
+                let items = try await helpCenter.faq(forCategoryID: categoryId)
+                self.unfilteredItems = items.map(FAQItemViewModel.init)
+            } catch {
+                // TODO: handle error
+                print(error)
+            }
             isLoading = false
         }
     }

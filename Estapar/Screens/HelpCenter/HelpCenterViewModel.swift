@@ -20,8 +20,12 @@ final class HelpCenterViewModel {
     func loadCategories() {
         Task {
             isLoading = true
-            let categories = await helpCenter.categories()
-            self.categories = categories.map(HelpCenterCategoryViewModel.init)
+            do {
+                let categories = try await helpCenter.categories()
+                self.categories = categories.map(HelpCenterCategoryViewModel.init)
+            } catch {
+                // TODO: handle error
+            }
             isLoading = false
         }
     }
