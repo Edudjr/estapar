@@ -44,7 +44,7 @@ final class FAQViewModel {
         helpCenter.faqItemsPublisher
             .compactMap { $0 }
             .sink { [weak self] items in
-                self?.items = items.map(FAQItemViewModel.init)
+                self?.unfilteredItems = items.map(FAQItemViewModel.init)
             }
             .store(in: &cancellables)
 
