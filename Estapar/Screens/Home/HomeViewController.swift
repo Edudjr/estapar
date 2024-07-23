@@ -33,7 +33,7 @@ final class HomeViewController: UIViewController {
                     .font(.subtleSemiBold)
                     .textColor(.zulPrimary700)
                     .textAlignment(.center)
-                    .padding(.all, 8)
+                    .padding(.all, 15)
                     .bordered()
                     .onTapGesture { [weak self] in
                         self?.viewModel.openHelpCenterTap()
