@@ -18,23 +18,29 @@ final class HomeViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
 
     var body: UIView {
-        VerticalStack {
-            Spacer()
-
+        ZStack {
             UILabel()
-                .text("Abrir central de ajuda")
-                .font(.subtleSemiBold)
-                .textColor(.zulPrimary700)
+                .text("Seja bem vindo! 😁")
+                .font(.h4)
+                .textColor(.primaryBlack)
                 .textAlignment(.center)
-                .padding(.all, 8)
-                .bordered()
-                .onTapGesture { [weak self] in
-                    self?.viewModel.openHelpCenterTap()
-                }
 
-            Spacer()
+            VerticalStack {
+                Spacer()
+
+                UILabel()
+                    .text("Abrir central de ajuda")
+                    .font(.subtleSemiBold)
+                    .textColor(.zulPrimary700)
+                    .textAlignment(.center)
+                    .padding(.all, 8)
+                    .bordered()
+                    .onTapGesture { [weak self] in
+                        self?.viewModel.openHelpCenterTap()
+                    }
+            }
         }
-        .padding(.all, 16)
+        .padding(.all, 25)
     }
 
     init(viewModel: HomeViewModel) {
