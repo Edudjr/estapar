@@ -31,7 +31,7 @@ class HelpCenterCategoryView: UIView {
             }
             .alignment(.center)
         }
-        .padding(.all, 10)
+        .padding(.all, 15)
         .backgroundColor(.primaryWhite)
         .bordered()
     }()
@@ -51,7 +51,6 @@ class HelpCenterCategoryView: UIView {
     }
 }
 
-// TODO: use view model in view
 extension HelpCenterCategoryView {
     convenience init(viewModel: HelpCenterCategoryViewModel) {
         self.init(title: viewModel.title,

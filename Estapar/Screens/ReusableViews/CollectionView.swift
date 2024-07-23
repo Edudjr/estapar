@@ -13,6 +13,11 @@ import Kingfisher
 final class CollectionView<Data>: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 where Data: RandomAccessCollection {
 
+    // MARK: Configuration
+    // Change this value in order to define the
+    // padding around the collection view.
+    private let edgesPadding: CGFloat = 21
+
     private let collection: Data
    
     private let builder: (Data.Element) -> [UIView]
@@ -96,7 +101,7 @@ where Data: RandomAccessCollection {
     func collectionView(_ collectionView: UICollectionView, 
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let padding: CGFloat = 20.0
+        let padding = edgesPadding * 1.5
         let width = view.frame.width / CGFloat(layout.itemsPerRow) - padding
         let height = width * 0.8
         return CGSize(width: width, height: height)
@@ -128,9 +133,8 @@ where Data: RandomAccessCollection {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        let extraPadding = 20.0
-        let totalPadding = totalHeaderHeight + extraPadding
-        return UIEdgeInsets(top: totalPadding, left: 15, bottom: 0, right: 15)
+        let totalPadding = totalHeaderHeight + edgesPadding
+        return UIEdgeInsets(top: totalPadding, left: edgesPadding, bottom: 0, right: edgesPadding)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

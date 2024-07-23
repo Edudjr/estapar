@@ -17,6 +17,7 @@ public enum ColorScheme {
     case primaryBlack
     case zulPrimary200
     case zulPrimary700
+    case gray100
     case gray400
 
     public var uiColor: UIColor {
@@ -29,6 +30,8 @@ public enum ColorScheme {
             UIColor(red: 176, green: 197, blue: 251, alpha: 1)
         case .zulPrimary700:
             UIColor(red: 0, green: 63, blue: 225, alpha: 1)
+        case .gray100:
+            UIColor(red: 243, green: 244, blue: 246, alpha: 1)
         case .gray400:
             UIColor(red: 156, green: 163, blue: 175, alpha: 1)
         }

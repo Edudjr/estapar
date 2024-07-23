@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DesignSystem
 import DeclarativeUIKit
 
 private var tapGestureKey: UInt8 = 0
@@ -56,13 +57,13 @@ extension UIView {
     @discardableResult
     func bordered() -> Self {
         rounded()
-        layer.borderColor = UIColor.lightGray.cgColor
+        layer.borderColor = ColorScheme.gray100.uiColor.cgColor
         layer.borderWidth = 1.0
         return self
     }
 
     @discardableResult
-    func rounded(_ cornerRadius: CGFloat = 5) -> Self {
+    func rounded(_ cornerRadius: CGFloat = 10) -> Self {
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = true
         return self
