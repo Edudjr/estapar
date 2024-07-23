@@ -18,6 +18,8 @@ final class HelpCenterViewModel {
     @Published var canWeHelpMessage: String?
     @Published var headerBackgroundImage: String?
     @Published var categories = [HelpCenterCategoryViewModel]()
+    @Published var errorMessage: String?
+    
     @ConcurrentLoading var isLoading = false
 
     init(helpCenter: HelpCenterProtocol, user: UserProtocol) {
@@ -32,8 +34,7 @@ final class HelpCenterViewModel {
             do {
                 try await helpCenter.requestCategories()
             } catch {
-                // TODO: show error
-                print(error)
+                errorMessage = EstaparError.categoriesError.errorDescription
             }
             isLoading = false
         }
@@ -45,8 +46,7 @@ final class HelpCenterViewModel {
             do {
                 try await  user.requestUser()
             } catch {
-                // TODO: show error
-                print(error)
+                errorMessage = EstaparError.categoriesError.errorDescription
             }
             isLoading = false
         }

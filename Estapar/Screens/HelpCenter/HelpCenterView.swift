@@ -8,10 +8,11 @@
 import Combine
 import UIKit
 import DeclarativeUIKit
+
 final class HelpCenterView: UIView {
 
     private let viewModel: HelpCenterViewModel
-    private var isLoadingCancellable: AnyCancellable?
+    private var cancellables = Set<AnyCancellable>()
 
     var body: UIView {
         if viewModel.isLoading {
@@ -52,11 +53,20 @@ final class HelpCenterView: UIView {
     }
 
     private func bind() {
-        isLoadingCancellable = viewModel.$isLoading
+        viewModel.$isLoading
             .receive(on: DispatchQueue.main)
             .sink { _ in
                 self.reload()
             }
+            .store(in: &cancellables)
+
+        viewModel.$errorMessage
+            .receive(on: DispatchQueue.main)
+            .compactMap { $0 }
+            .sink { [weak self] message in
+                self?.showErrorDialog(message: message)
+            }
+            .store(in: &cancellables)
     }
 
     private func reload() {

@@ -61,6 +61,7 @@
 		20EAAE782C4F9988003A68D8 /* ConcurrentLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE772C4F9988003A68D8 /* ConcurrentLoading.swift */; };
 		20EAAE7A2C4FA04D003A68D8 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE792C4FA04D003A68D8 /* UITextField+Extensions.swift */; };
 		20EAAE7C2C4FABE1003A68D8 /* Reloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE7B2C4FABE1003A68D8 /* Reloadable.swift */; };
+		20EAAE7E2C4FB4DE003A68D8 /* EstaparError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE7D2C4FB4DE003A68D8 /* EstaparError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		20EAAE772C4F9988003A68D8 /* ConcurrentLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentLoading.swift; sourceTree = "<group>"; };
 		20EAAE792C4FA04D003A68D8 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		20EAAE7B2C4FABE1003A68D8 /* Reloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reloadable.swift; sourceTree = "<group>"; };
+		20EAAE7D2C4FB4DE003A68D8 /* EstaparError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstaparError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 				20EAAE332C4E02A8003A68D8 /* FAQItem.swift */,
 				20EAAE512C4E9443003A68D8 /* Header.swift */,
 				20EAAE572C4F6C55003A68D8 /* UserModel.swift */,
+				20EAAE7D2C4FB4DE003A68D8 /* EstaparError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				20EAAE1B2C4DD44B003A68D8 /* TextFieldView.swift in Sources */,
 				20EAAE242C4DE550003A68D8 /* NetworkError.swift in Sources */,
 				20EAAE462C4E2F2B003A68D8 /* UINavigationController+Extensions.swift in Sources */,
+				20EAAE7E2C4FB4DE003A68D8 /* EstaparError.swift in Sources */,
 				20EAAE022C4A4006003A68D8 /* HelpCenterView.swift in Sources */,
 				20EAAE162C4CB1D6003A68D8 /* FAQItemView.swift in Sources */,
 				20EAADFD2C4A2631003A68D8 /* HelpCenterCategoryViewModel.swift in Sources */,

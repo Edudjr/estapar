@@ -25,6 +25,8 @@ final class FAQViewModel {
     }
 
     @Published var items = [FAQItemViewModel]()
+    @Published var errorMessage: String?
+
     @ConcurrentLoading var isLoading = true
 
     private var cancellables = Set<AnyCancellable>()
@@ -42,8 +44,7 @@ final class FAQViewModel {
             do {
                 try await helpCenter.requestFAQItems(forCategoryID: categoryId)
             } catch {
-                // TODO: show error
-                print(error)
+                errorMessage = EstaparError.faqItemsError.errorDescription
             }
             isLoading = false
         }

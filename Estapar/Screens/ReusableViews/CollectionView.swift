@@ -51,6 +51,8 @@ where Data: RandomAccessCollection {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        guard collection.count > 0 else { return }
+        
         setupCollectionView()
         let topNotch = setupTopNotch()
         let header = setupHeader(topNotch: topNotch)

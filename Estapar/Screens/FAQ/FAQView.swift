@@ -13,8 +13,7 @@ import DesignSystem
 final class FAQView: UIView {
     private let viewModel: FAQViewModel
     private var isLoadingCancellable: AnyCancellable?
-    private var itemsCancellable: AnyCancellable?
-    private var isEditting = false
+    private var cancellables = Set<AnyCancellable>()
 
     var body: UIView {
         if viewModel.isLoading {
@@ -33,9 +32,7 @@ final class FAQView: UIView {
                         .text(viewModel.appliedSearch)
                         .onEdit { [weak self] text in
                             self?.viewModel.appliedSearch = text
-                            self?.isEditting = true
                         }
-                        .focus(isEditting)
                         .padding(.bottom, 15)
 
                     reloadableItems
@@ -71,16 +68,27 @@ final class FAQView: UIView {
     }
 
     private func bind() {
-        itemsCancellable = viewModel.$items
+       viewModel.$items
             .receive(on: DispatchQueue.main)
             .sink { _ in
                 self.reloadableItems.reload()
             }
-        isLoadingCancellable = viewModel.$isLoading
+            .store(in: &cancellables)
+
+        viewModel.$isLoading
             .receive(on: DispatchQueue.main)
             .sink { _ in
                 self.reload()
             }
+            .store(in: &cancellables)
+
+        viewModel.$errorMessage
+            .receive(on: DispatchQueue.main)
+            .compactMap { $0 }
+            .sink { [weak self] message in
+                self?.showErrorDialog(message: message)
+            }
+            .store(in: &cancellables)
     }
 
     private func reload() {

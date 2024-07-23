@@ -54,6 +54,11 @@ extension UIView {
         show(viewController)
     }
 
+    func showErrorDialog(message: String) {
+        guard let parentViewController else { return }
+        parentViewController.showErrorDialog(message: message)
+    }
+
     @discardableResult
     func bordered() -> Self {
         rounded()
