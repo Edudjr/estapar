@@ -7,6 +7,7 @@
 
 import UIKit
 import DeclarativeUIKit
+import DesignSystem
 import Kingfisher
 
 final class CollectionView<Data>: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout

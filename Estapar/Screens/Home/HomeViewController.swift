@@ -8,6 +8,7 @@
 import Combine
 import UIKit
 import DeclarativeUIKit
+import DesignSystem
 
 final class HomeViewController: UIViewController {
     private let viewModel: HomeViewModel

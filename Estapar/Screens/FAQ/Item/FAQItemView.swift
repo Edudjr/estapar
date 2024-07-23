@@ -8,6 +8,7 @@
 import Combine
 import DeclarativeUIKit
 import UIKit
+import DesignSystem
 
 final class FAQItemView: UIView {
     private var viewModel: FAQItemViewModel

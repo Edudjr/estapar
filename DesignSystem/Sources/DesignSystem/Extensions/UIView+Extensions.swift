@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     @discardableResult
     func backgroundColor(_ color: ColorScheme) -> Self {
         self.backgroundColor = color.uiColor

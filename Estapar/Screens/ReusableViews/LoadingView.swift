@@ -5,6 +5,7 @@
 //  Created by Eduardo Domene Junior on 19/07/24.
 //
 
+import DesignSystem
 import DeclarativeUIKit
 import UIKit
 
@@ -65,7 +66,7 @@ private class LoadingAnimationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .primaryWhite
+        view.backgroundColor = ColorScheme.primaryWhite.uiColor
         view.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

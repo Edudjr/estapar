@@ -5,6 +5,7 @@
 //  Created by Eduardo Domene Junior on 22/07/24.
 //
 
+import DesignSystem
 import DeclarativeUIKit
 import UIKit
 

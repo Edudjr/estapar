@@ -12,14 +12,14 @@ import UIKit
 
  Font names are based on the "name" property from [Figma]( https://www.figma.com/design/CGCpZBrAw3zGkmD0Kadygf/Central-de-ajuda---Prova-Mobile?node-id=179-1287&t=ryRGYIheMt237vDk-0).
  */
-enum FontScheme {
+public enum FontScheme {
     case h4
     case small
     case smallBold
     case subtleMedium
     case subtleSemiBold
 
-    var uiFont: UIFont {
+    public var uiFont: UIFont {
         switch self {
         case .h4:
             let size: CGFloat = 24

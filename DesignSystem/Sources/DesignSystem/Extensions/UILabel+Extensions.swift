@@ -7,14 +7,16 @@
 
 import UIKit
 
-extension UILabel {
+public extension UILabel {
     @discardableResult
     func font(_ font: FontScheme) -> Self {
-        self.font(font.uiFont)
+        self.font = font.uiFont
+        return self
     }
 
     @discardableResult
     func textColor(_ color: ColorScheme = .primaryWhite) -> Self {
-        self.textColor(color.uiColor)
+        self.textColor = color.uiColor
+        return self
     }
 }

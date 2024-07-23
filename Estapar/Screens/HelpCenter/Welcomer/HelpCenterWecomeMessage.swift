@@ -7,6 +7,7 @@
 
 import UIKit
 import DeclarativeUIKit
+import DesignSystem
 
 final class HelpCenterWelcomeMessage: UIView {
     private let line1: String

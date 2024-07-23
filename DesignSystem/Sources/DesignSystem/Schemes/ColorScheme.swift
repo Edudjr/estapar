@@ -12,14 +12,14 @@ import UIKit
 
  Color names are based on the "Colors" property from [Figma]( https://www.figma.com/design/CGCpZBrAw3zGkmD0Kadygf/Central-de-ajuda---Prova-Mobile?node-id=179-1287&t=ryRGYIheMt237vDk-0).
  */
-enum ColorScheme {
+public enum ColorScheme {
     case primaryWhite
     case primaryBlack
     case zulPrimary200
     case zulPrimary700
     case gray400
 
-    var uiColor: UIColor {
+    public var uiColor: UIColor {
         switch self {
         case .primaryWhite:
             UIColor(red: 255, green: 255, blue: 255, alpha: 1)

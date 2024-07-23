@@ -7,6 +7,7 @@
 
 import UIKit
 import DeclarativeUIKit
+import DesignSystem
 
 class HelpCenterCategoryView: UIView {
     lazy var body: UIView = {
