@@ -35,8 +35,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let networkManager = NetworkManager()
         let api = HelpCenterAPI(baseURL: baseURL, networkManager: networkManager)
-        let helpCenter = HelpCenterModel(api: api)
-        let homeViewModel = HomeViewModel(helpCenter: helpCenter)
+        
+        let helpCenterModel = HelpCenterModel(api: api)
+        let userModel = UserModel()
+
+        let homeViewModel = HomeViewModel(helpCenter: helpCenterModel, user: userModel)
         let homeViewController = HomeViewController(viewModel: homeViewModel)
 
 //        let navigation = UINavigationController(rootViewController: homeViewController)

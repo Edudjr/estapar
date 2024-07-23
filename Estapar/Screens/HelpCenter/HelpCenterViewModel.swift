@@ -10,6 +10,8 @@ import Foundation
 
 final class HelpCenterViewModel {
     let helpCenter: HelpCenterProtocol
+    let user: UserProtocol
+
     private var cancellables = Set<AnyCancellable>()
 
 //    @Published var header: Header?
@@ -20,8 +22,9 @@ final class HelpCenterViewModel {
     @Published var categories = [HelpCenterCategoryViewModel]()
     @Published var isLoading = false
 
-    init(helpCenter: HelpCenterProtocol) {
+    init(helpCenter: HelpCenterProtocol, user: UserProtocol) {
         self.helpCenter = helpCenter
+        self.user = user
         bind()
     }
 
@@ -29,15 +32,25 @@ final class HelpCenterViewModel {
         helpCenter.requestCategories()
     }
 
+    func loadHeader() {
+        user.requestUser()
+    }
+
     func bind() {
         helpCenter.headerPublisher
+            .combineLatest(user.firstNamePublisher)
             .receive(on: DispatchQueue.main)
-            .compactMap { $0 }
-            .sink { [weak self] header in
+            .sink { [weak self] (header, firstName) in
                 guard let self else { return }
-                self.helloUserMessage = header.line1
-                self.canWeHelpMessage = header.line2
-                self.headerBackgroundImage = header.image
+
+                if let header {
+                    self.canWeHelpMessage = header.line2
+                    self.headerBackgroundImage = header.image
+                }
+
+                if let header, let firstName {
+                    self.helloUserMessage = header.line1?.replacingOccurrences(of: "%firstName%", with: firstName)
+                }
             }
             .store(in: &cancellables)
 
@@ -49,15 +62,6 @@ final class HelpCenterViewModel {
                 self.categories = items.map(HelpCenterCategoryViewModel.init)
             }
             .store(in: &cancellables)
-
-//        helpCenter.categoriesPublisher
-//            .receive(on: DispatchQueue.main)
-//            .compactMap { $0 }
-//            .sink { [weak self] items in
-//                guard let self else { return }
-//                self.categories = items.map(HelpCenterCategoryViewModel.init)
-//            }
-//            .store(in: &cancellables)
 
         helpCenter.isLoadingPublisher
             .receive(on: DispatchQueue.main)

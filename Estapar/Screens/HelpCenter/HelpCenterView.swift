@@ -27,24 +27,24 @@ final class HelpCenterView: UIView {
                         self.show(faq)
                     }
             }
-            .header(backgroundImageURL: viewModel.headerBackgroundImage) {
-                HelpCenterWelcomeMessage(name: "Eduardo")
+            .header(backgroundImageURL: viewModel.headerBackgroundImage) { [weak self] in
+                HelpCenterWelcomeMessage(line1: self?.viewModel.helloUserMessage ?? "",
+                                         line2: self?.viewModel.canWeHelpMessage ?? "")
             }
             .asUIView()
             .backgroundColor(.white)
+            .fadeIn()
         }
     }
 
     init(viewModel: HelpCenterViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
+        title("Central de ajuda")
         add(body)
         bind()
         loadCategories()
-        DispatchQueue.main.async {
-            self.parentViewController?.title = "Central de ajuda"
-
-        }
+        loadHeader()
     }
 
     required init?(coder: NSCoder) {
@@ -66,5 +66,9 @@ final class HelpCenterView: UIView {
 
     private func loadCategories() {
         viewModel.loadCategories()
+    }
+
+    private func loadHeader() {
+        viewModel.loadHeader()
     }
 }

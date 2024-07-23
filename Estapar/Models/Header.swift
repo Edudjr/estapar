@@ -26,7 +26,7 @@ struct Header {
     private let image3x: String?
 
     init(_ header: HeaderDTO) {
-        self.line1 = header.line1?.replacingOccurrences(of: "%firstName%", with: "Eduardo")
+        self.line1 = header.line1
         self.line2 = header.line2
         self.image1x = header.image?.oneX
         self.image2x = header.image?.twoX

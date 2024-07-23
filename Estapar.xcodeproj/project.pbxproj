@@ -59,6 +59,7 @@
 		20EAAE522C4E9443003A68D8 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE512C4E9443003A68D8 /* Header.swift */; };
 		20EAAE542C4F16FF003A68D8 /* TopNotch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE532C4F16FF003A68D8 /* TopNotch.swift */; };
 		20EAAE562C4F171D003A68D8 /* ZStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE552C4F171D003A68D8 /* ZStack.swift */; };
+		20EAAE582C4F6C55003A68D8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE572C4F6C55003A68D8 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		20EAAE512C4E9443003A68D8 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		20EAAE532C4F16FF003A68D8 /* TopNotch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNotch.swift; sourceTree = "<group>"; };
 		20EAAE552C4F171D003A68D8 /* ZStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZStack.swift; sourceTree = "<group>"; };
+		20EAAE572C4F6C55003A68D8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 				20EAAE312C4E028A003A68D8 /* HelpCenterCategory.swift */,
 				20EAAE332C4E02A8003A68D8 /* FAQItem.swift */,
 				20EAAE512C4E9443003A68D8 /* Header.swift */,
+				20EAAE572C4F6C55003A68D8 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				20EAAE542C4F16FF003A68D8 /* TopNotch.swift in Sources */,
 				20EAAE422C4E163B003A68D8 /* ArrowView.swift in Sources */,
 				20EAAE1E2C4DE010003A68D8 /* NetworkManager.swift in Sources */,
+				20EAAE582C4F6C55003A68D8 /* UserModel.swift in Sources */,
 				20EAAE322C4E028A003A68D8 /* HelpCenterCategory.swift in Sources */,
 				20EAAE092C4A752C003A68D8 /* ScrollView+Extensions.swift in Sources */,
 				20EAADBB2C49DBE5003A68D8 /* HomeViewController.swift in Sources */,

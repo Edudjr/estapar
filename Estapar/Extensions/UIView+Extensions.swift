@@ -67,4 +67,24 @@ extension UIView {
         layer.masksToBounds = true
         return self
     }
+
+    @discardableResult
+    func title(_ text: String) -> Self {
+        DispatchQueue.main.async {
+            self.parentViewController?.title = text
+        }
+        return self
+    }
+
+    @discardableResult
+    func fadeIn(duration: TimeInterval = 0.5, completion: ((Bool) -> Void)? = nil) -> Self {
+        self.alpha = 0 // Initially set the view's alpha to 0 (fully transparent)
+        self.isHidden = false // Make sure the view is not hidden
+
+        UIView.animate(withDuration: duration, animations: {
+            self.alpha = 1 // Animate the alpha to 1 (fully opaque)
+        }, completion: completion)
+
+        return self
+    }
 }

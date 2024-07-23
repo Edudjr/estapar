@@ -9,25 +9,27 @@ import UIKit
 import DeclarativeUIKit
 
 final class HelpCenterWelcomeMessage: UIView {
-    private let name: String
+    private let line1: String
+    private let line2: String
 
     private var body: UIView {
         VerticalStack {
             UILabel()
-                .text("Olá, \(name) 👋")
+                .text(line1)
                 .font(.h4)
                 .textColor(.zulPrimary200)
            
             UILabel()
-                .text("Como podemos ajudar?")
+                .text(line2)
                 .font(.h4)
                 .textColor(.primary)
         }
         .padding(.all, 15)
     }
 
-    init(name: String) {
-        self.name = name
+    init(line1: String, line2: String) {
+        self.line1 = line1
+        self.line2 = line2
         super.init(frame: .zero)
         add(body)
     }
