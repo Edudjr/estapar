@@ -36,13 +36,14 @@ final class FAQView: UIView {
                             self?.isEditting = true
                         }
                         .focus(isEditting)
-                        .padding(.bottom, 8)
+                        .padding(.bottom, 15)
 
                     reloadableItems
                 }
             }
             .showsVerticalScrollIndicator(false)
             .padding(.all, 16)
+            .fadeIn()
         }
     }
 

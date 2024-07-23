@@ -13,7 +13,7 @@ final class Separator: UIView {
         UIView()
             .set(\.heightAnchor, to: 1)
             .backgroundColor(.gray100)
-            .padding(.all, 4)
+            .padding(.horizontal, 4)
     }
 
     init() {

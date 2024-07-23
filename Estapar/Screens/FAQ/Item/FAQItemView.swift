@@ -27,7 +27,8 @@ final class FAQItemView: UIView {
             itemsStack
                 .isHidden(!viewModel.isExpanded)
         }
-        .padding(.all, 8)
+        .spacing(15)
+        .padding(.all, 15)
         .bordered()
     }
 
@@ -39,6 +40,8 @@ final class FAQItemView: UIView {
                 HorizontalStack {
                     UILabel()
                         .text(question)
+                        .font(.subtleMedium)
+                        .textColor(.primaryBlack)
                         .numberOfLines(0)
                     
                     VerticalStack {
@@ -49,7 +52,7 @@ final class FAQItemView: UIView {
                 }
             }
         }
-        .spacing(8)
+        .spacing(15)
     }()
 
     init(viewModel: FAQItemViewModel) {

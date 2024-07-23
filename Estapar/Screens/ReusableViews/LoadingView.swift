@@ -11,8 +11,22 @@ import UIKit
 
 class LoadingView: UIView {
     lazy var body: UIView = {
-        LoadingAnimationViewController()
-            .asUIView()
+        VerticalStack {
+            Spacer()
+            
+            LoadingAnimationViewController()
+                .asUIView()
+                .padding(.bottom, 15)
+
+            UILabel()
+                .text("Carregando")
+                .font(.small)
+                .textColor(.zulPrimary700)
+                .textAlignment(.center)
+
+            Spacer()
+        }
+
     }()
 
     init() {
@@ -27,7 +41,8 @@ class LoadingView: UIView {
 
 // Inspired from https://stackoverflow.com/a/62210326/3397287
 private class LoadingAnimationViewController: UIViewController {
-    private let dotSize: CGFloat = 10.0
+    private let dotSize: CGFloat = 8.0
+    private let dotColor: UIColor = ColorScheme.zulPrimary700.uiColor
 
     private let stackView: UIStackView = {
         $0.distribution = .fill
@@ -74,7 +89,7 @@ private class LoadingAnimationViewController: UIViewController {
         circles.forEach {
             $0.layer.cornerRadius = dotSize/2
             $0.layer.masksToBounds = true
-            $0.backgroundColor = .systemBlue
+            $0.backgroundColor = dotColor
             stackView.addArrangedSubview($0)
             $0.widthAnchor.constraint(equalToConstant: dotSize).isActive = true
             $0.heightAnchor.constraint(equalTo: $0.widthAnchor).isActive = true
