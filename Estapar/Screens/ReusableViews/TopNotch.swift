@@ -19,10 +19,12 @@ final class TopNotch: UIView {
 
             UIView().backgroundColor(.white).rounded(10)
         }
+        .set(\.heightAnchor, to: 20)
     }
 
     init() {
         super.init(frame: .zero)
+        add(body)
     }
 
     required init?(coder: NSCoder) {

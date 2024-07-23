@@ -7,6 +7,7 @@
 
 import UIKit
 import DeclarativeUIKit
+import Kingfisher
 
 final class CollectionView<Data>: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 where Data: RandomAccessCollection {
@@ -19,7 +20,8 @@ where Data: RandomAccessCollection {
 
     private var headerView: UIView?
     private var headerBuilder: (() -> UIView)?
-    private var headerBackgroundBuilder: (() -> UIView)?
+    private var headerBackgroundView: UIView?
+    private var headerBackgroundViewOverlay = UIView()
 
     private var headerTopPadding: CGFloat = 0
     private var totalHeaderHeight: CGFloat {
@@ -43,6 +45,21 @@ where Data: RandomAccessCollection {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupCollectionView()
+        let topNotch = setupTopNotch()
+        let header = setupHeader(topNotch: topNotch)
+        setupHeaderBackgroundImage(header: header)
+    }
+
+    @discardableResult
+    func header(backgroundImageURL: String? = nil, topPadding: CGFloat = 120, _ builder: @escaping () -> UIView) -> Self {
+        self.headerTopPadding = topPadding
+        headerBuilder = builder
+        setHeaderBackgroundImage(url: backgroundImageURL ?? "")
+        return self
+    }
+
+    private func setupCollectionView() {
         // Create an instance of UICollectionViewFlowLayout since you cant
         // Initialize UICollectionView without a layout
         let flowLayout = UICollectionViewFlowLayout()
@@ -65,65 +82,6 @@ where Data: RandomAccessCollection {
         collectionview.backgroundColor = UIColor.clear
 
         view.add(collectionview).backgroundColor(.white)
-
-        // Initialize and configure the header view
-        setupHeader()
-    }
-
-    private func setupHeader() {
-        guard
-            let collectionview,
-            let header = headerBuilder?()
-        else {
-            return
-        }
-        
-        headerView = header
-
-        // MARK: Rounded Notch
-        let notch = TopNotch()
-
-        view
-            .addSubview(notch)
-
-        notch
-            .connect(\.leadingAnchor, to: view.leadingAnchor)
-            .connect(\.trailingAnchor, to: view.trailingAnchor)
-            .set(\.heightAnchor, to: 20)
-
-        view.bringSubviewToFront(collectionview)
-
-        // MARK: Header
-
-        // Set up initial constraints for the header view
-        collectionview
-            .addSubview(header)
-
-        header
-            .connect(\.leadingAnchor, to: collectionview.leadingAnchor)
-            .connect(\.trailingAnchor, to: collectionview.trailingAnchor)
-            .connect(\.topAnchor, to: collectionview.topAnchor, padding: headerTopPadding)
-            .connect(\.widthAnchor, to: collectionview.widthAnchor)
-            .connect(\.bottomAnchor, to: notch.topAnchor)
-
-        guard
-            let headerBackground = headerBackgroundBuilder?()
-        else {
-            return
-        }
-
-        headerBackground.translatesAutoresizingMaskIntoConstraints = false
-        collectionview.addSubview(headerBackground)
-        headerBackground
-            .connect(\.topAnchor, to: view.topAnchor)
-            .connect(\.leadingAnchor, to: header.leadingAnchor)
-            .connect(\.trailingAnchor, to: header.trailingAnchor)
-            .connect(\.bottomAnchor, to: header.bottomAnchor)
-
-        collectionview.bringSubviewToFront(header)
-
-
-//        collectionview.sendSubviewToBack(body)
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -175,7 +133,7 @@ where Data: RandomAccessCollection {
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let stickyOffset: CGFloat = headerTopPadding // Adjust this value to your desired sticky point
+        let stickyOffset: CGFloat = headerTopPadding
 
         let yOffset = scrollView.contentOffset.y + scrollView.contentInset.top
 
@@ -187,19 +145,101 @@ where Data: RandomAccessCollection {
                 constraint.constant = max(yOffset, stickyOffset)
             }
         }
+        
+        updateHeaderBackgroundColor(forYOffset: yOffset)
     }
 
-    @discardableResult
-    func header(topPadding: CGFloat = 120, _ builder: @escaping () -> UIView) -> Self {
-        self.headerTopPadding = topPadding
-        headerBuilder = builder
-        return self
+    private func updateHeaderBackgroundColor(forYOffset offset: CGFloat) {
+        let percentage = calculateCollapsedPercentage(forYOffset: offset)
+        setHeaderBackgroundColor(forCollapsedPercantage: percentage)
     }
 
-    @discardableResult
-    func headerBackground(_ builder: @escaping () -> UIView) -> Self {
-        self.headerBackgroundBuilder = builder
-        return self
+    private func setHeaderBackgroundColor(forCollapsedPercantage percentage: CGFloat) {
+        headerBackgroundViewOverlay.backgroundColor(.blue.withAlphaComponent(percentage/100.0))
+    }
+
+    private func calculateCollapsedPercentage(forYOffset offset: CGFloat) -> CGFloat {
+        guard offset >= 0 else {
+            return 0
+        }
+        guard offset <= headerTopPadding else {
+            return 100
+        }
+        return (offset / headerTopPadding) * 100.0
+    }
+}
+
+// MARK: Header Setup
+
+extension CollectionView {
+    private func setupTopNotch() -> UIView {
+        // MARK: Rounded Notch
+        let notch = TopNotch()
+        view.addSubview(notch)
+
+        notch
+            .connect(\.leadingAnchor, to: view.leadingAnchor)
+            .connect(\.trailingAnchor, to: view.trailingAnchor)
+
+        view.sendSubviewToBack(notch)
+        return notch
+    }
+
+    private func setupHeader(topNotch: UIView) -> UIView {
+        guard
+            let collectionview,
+            let header = headerBuilder?()
+        else {
+            return UIView()
+        }
+
+        collectionview
+            .addSubview(header)
+
+        header
+            .connect(\.leadingAnchor, to: collectionview.leadingAnchor)
+            .connect(\.trailingAnchor, to: collectionview.trailingAnchor)
+            .connect(\.topAnchor, to: collectionview.topAnchor, padding: headerTopPadding)
+            .connect(\.widthAnchor, to: collectionview.widthAnchor)
+            .connect(\.bottomAnchor, to: topNotch.topAnchor)
+
+        self.headerView = header
+        return header
+    }
+
+    private func setupHeaderBackgroundImage(header: UIView) {
+        guard
+            let collectionview
+        else {
+            return
+        }
+
+        guard let headerBackgroundView else { return }
+
+        headerBackgroundView.add(headerBackgroundViewOverlay)
+
+        headerBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+        collectionview.addSubview(headerBackgroundView)
+        headerBackgroundView
+            .connect(\.topAnchor, to: view.topAnchor)
+            .connect(\.leadingAnchor, to: header.leadingAnchor)
+            .connect(\.trailingAnchor, to: header.trailingAnchor)
+            .connect(\.bottomAnchor, to: header.bottomAnchor)
+
+        collectionview.bringSubviewToFront(header)
+    }
+
+    private func setHeaderBackgroundImage(url: String) {
+        if let image = URL(string: url) {
+            let imageView = UIImageView()
+                .contentMode(.scaleAspectFill)
+                .set(contentHuggingPriority: .defaultHigh, for: .vertical)
+                .set(compressionResistance: .defaultLow, for: .vertical)
+                .clipsToBounds(true)
+
+            imageView.kf.setImage(with: image)
+            self.headerBackgroundView = imageView
+        }
     }
 }
 

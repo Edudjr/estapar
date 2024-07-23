@@ -8,8 +8,6 @@
 import Combine
 import UIKit
 import DeclarativeUIKit
-import Kingfisher
-
 final class HelpCenterView: UIView {
 
     private let viewModel: HelpCenterViewModel
@@ -29,23 +27,8 @@ final class HelpCenterView: UIView {
                         self.show(faq)
                     }
             }
-            .header {
+            .header(backgroundImageURL: viewModel.headerBackgroundImage) {
                 HelpCenterWelcomeMessage(name: "Eduardo")
-            }
-            .headerBackground { [weak self] in
-                if let image = self?.viewModel.headerBackgroundImage {
-                    let url = URL(string: image)!
-                    let imageView = UIImageView()
-                        .contentMode(.scaleAspectFill)
-                        .set(contentHuggingPriority: .defaultHigh, for: .vertical)
-                        .set(compressionResistance: .defaultLow, for: .vertical)
-                        .clipsToBounds(true)
-
-                    imageView.kf.setImage(with: url)
-                    return imageView
-                } else {
-                    return UIView()
-                }
             }
             .asUIView()
             .backgroundColor(.white)
