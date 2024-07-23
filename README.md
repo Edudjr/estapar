@@ -1,7 +1,10 @@
-# Estapar/Zul Test App
+# Help Center
 
+Esse projeto tem como objetivo criar duas telas de Help Center, cada uma com distintos desafios técnicos ligados à arquitetura iOS. A primeira tela possui uma Collection View com Sticky Header, além de uma imagem de fundo. A segunda possui items expandiveis e um campo de busca que deve filtrar localmente os resultados.
 
-<iframe src="https://drive.google.com/file/d/1Sri8VoSKQrNsb8A9YWKz1sVrpm9J1nVy/preview" width="640" height="380"></iframe>
+| Video |
+| --- |
+|<img src="MarkdownResources/estapar.gif" alt="drawing" width="200"/>|
 
 
 | Inicio | Home Expandida | Home Colapsada | FAQ | 
