@@ -84,4 +84,10 @@ class TextFieldView: UIView, UITextFieldDelegate {
         // Revert border color to gray when the text field loses focus
         textField.layer.borderColor = UIColor.clear.cgColor
     }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Dismiss the keyboard when the return key is pressed
+        textField.resignFirstResponder()
+        return true
+    }
 }

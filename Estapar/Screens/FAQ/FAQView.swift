@@ -41,6 +41,9 @@ final class FAQView: UIView {
             .showsVerticalScrollIndicator(false)
             .padding(.all, 16)
             .fadeIn()
+            .onTapGesture(cancelsTouchesInView: false) { [weak self] in
+                self?.endEditing(true)
+            }
         }
     }
 

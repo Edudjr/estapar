@@ -25,11 +25,12 @@ extension UIView {
     }
 
     @discardableResult
-    func onTapGesture(_ action: @escaping (() -> Void)) -> Self {
+    func onTapGesture(cancelsTouchesInView: Bool = false, _ action: @escaping (() -> Void)) -> Self {
         isUserInteractionEnabled = true
         let handler = TapGestureHandler(action: action)
         let tapGesture = UITapGestureRecognizer(target: handler, action: #selector(handler.handleTap))
-
+        tapGesture.cancelsTouchesInView = cancelsTouchesInView
+        
         addGestureRecognizer(tapGesture)
 
         objc_setAssociatedObject(self, &tapGestureKey, handler, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
