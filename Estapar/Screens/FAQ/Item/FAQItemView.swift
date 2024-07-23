@@ -16,6 +16,18 @@ final class FAQItemView: UIView {
 
     var body: UIView {
         VerticalStack {
+            titleSection
+
+            itemsSection
+                .isHidden(!viewModel.isExpanded)
+        }
+        .spacing(15)
+        .padding(.all, 15)
+        .bordered()
+    }
+
+    var titleSection: UIView {
+        HorizontalStack {
             UILabel()
                 .text(viewModel.category)
                 .font(.subtleSemiBold)
@@ -24,15 +36,15 @@ final class FAQItemView: UIView {
                     self?.viewModel.isExpanded.toggle()
                 }
 
-            itemsStack
-                .isHidden(!viewModel.isExpanded)
+            VerticalStack {
+                Spacer()
+                titleArrow
+                Spacer()
+            }
         }
-        .spacing(15)
-        .padding(.all, 15)
-        .bordered()
     }
 
-    lazy var itemsStack: UIView = {
+    lazy var itemsSection: UIView = {
         VerticalStack {
             Separator()
 
@@ -55,6 +67,8 @@ final class FAQItemView: UIView {
         .spacing(15)
     }()
 
+    lazy var titleArrow = ArrowView(direction: .down)
+
     init(viewModel: FAQItemViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
@@ -70,11 +84,14 @@ final class FAQItemView: UIView {
         isExpandedCancellable = viewModel.$isExpanded
             .receive(on: DispatchQueue.main)
             .dropFirst()
-            .sink { isExpanded in
+            .sink { [weak self] isExpanded in
+                guard let self else { return }
                 if isExpanded {
                     self.expand()
+                    self.titleArrow.rotate180DegreesCounterclockwise(animated: true)
                 } else {
                     self.collapse()
+                    self.titleArrow.rotate180DegreesClockwise(animated: true)
                 }
             }
     }
@@ -82,7 +99,7 @@ final class FAQItemView: UIView {
     @discardableResult
     func expand() -> Self {
         animate { [weak self] in
-            self?.itemsStack.isHidden(false)
+            self?.itemsSection.isHidden(false)
         }
 
         return self
@@ -91,7 +108,7 @@ final class FAQItemView: UIView {
     @discardableResult
     func collapse() -> Self {
         animate { [weak self] in
-            self?.itemsStack.isHidden(true)
+            self?.itemsSection.isHidden(true)
         }
         return self
     }

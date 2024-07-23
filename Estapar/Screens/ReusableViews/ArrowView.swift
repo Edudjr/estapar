@@ -26,6 +26,17 @@ final class ArrowView: UIView {
         self.direction = direction
         super.init(frame: .zero)
         add(body)
+
+        switch direction {
+        case .left:
+            rotate180DegreesCounterclockwise()
+        case .right:
+            break
+        case .up:
+            rotate90DegreesCounterclockwise()
+        case .down:
+            rotate90DegreesClockwise()
+        }
     }
 
     required init?(coder: NSCoder) {

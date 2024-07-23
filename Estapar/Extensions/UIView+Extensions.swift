@@ -100,4 +100,39 @@ extension UIView {
 
         return self
     }
+
+    @discardableResult
+    func rotate90DegreesClockwise(animated: Bool = false, duration: TimeInterval = 0.3) -> Self {
+        return rotate(to: .pi / 2, animated: animated, duration: duration)
+    }
+
+    @discardableResult
+    func rotate90DegreesCounterclockwise(animated: Bool = false, duration: TimeInterval = 0.3) -> Self {
+        return rotate(to: -.pi / 2, animated: animated, duration: duration)
+    }
+
+    @discardableResult
+    func rotate180DegreesClockwise(animated: Bool = false, duration: TimeInterval = 0.3) -> Self {
+        return rotate(to: .pi, animated: animated, duration: duration)
+    }
+
+    @discardableResult
+    func rotate180DegreesCounterclockwise(animated: Bool = false, duration: TimeInterval = 0.3) -> Self {
+        return rotate(to: -3.14159, animated: animated, duration: duration)
+    }
+
+    @discardableResult
+    func rotate(to angle: CGFloat, animated: Bool = false, duration: TimeInterval = 0.3) -> Self {
+        let rotation = {
+            self.transform = self.transform.rotated(by: angle)
+        }
+
+        if animated {
+            UIView.animate(withDuration: duration, animations: rotation)
+        } else {
+            rotation()
+        }
+
+        return self
+    }
 }
