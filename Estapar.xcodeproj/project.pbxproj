@@ -59,6 +59,8 @@
 		20EAAE582C4F6C55003A68D8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE572C4F6C55003A68D8 /* UserModel.swift */; };
 		20EAAE752C4F8100003A68D8 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 20EAAE742C4F8100003A68D8 /* DesignSystem */; };
 		20EAAE782C4F9988003A68D8 /* ConcurrentLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE772C4F9988003A68D8 /* ConcurrentLoading.swift */; };
+		20EAAE7A2C4FA04D003A68D8 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE792C4FA04D003A68D8 /* UITextField+Extensions.swift */; };
+		20EAAE7C2C4FABE1003A68D8 /* Reloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE7B2C4FABE1003A68D8 /* Reloadable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +135,8 @@
 		20EAAE572C4F6C55003A68D8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		20EAAE732C4F80B2003A68D8 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = text; path = DesignSystem; sourceTree = SOURCE_ROOT; };
 		20EAAE772C4F9988003A68D8 /* ConcurrentLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentLoading.swift; sourceTree = "<group>"; };
+		20EAAE792C4FA04D003A68D8 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		20EAAE7B2C4FABE1003A68D8 /* Reloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reloadable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +250,7 @@
 				20EAAE1A2C4DD44B003A68D8 /* TextFieldView.swift */,
 				20EAAE532C4F16FF003A68D8 /* TopNotch.swift */,
 				20EAAE552C4F171D003A68D8 /* ZStack.swift */,
+				20EAAE7B2C4FABE1003A68D8 /* Reloadable.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 				20EAAE082C4A752C003A68D8 /* ScrollView+Extensions.swift */,
 				20EAAE0A2C4C6BD8003A68D8 /* UIView+Extensions.swift */,
 				20EAAE452C4E2F2B003A68D8 /* UINavigationController+Extensions.swift */,
+				20EAAE792C4FA04D003A68D8 /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -526,6 +532,7 @@
 				20EAAE042C4A7495003A68D8 /* HelpCenterWecomeMessage.swift in Sources */,
 				20EAAE272C4DF73F003A68D8 /* HelpCenterAPI.swift in Sources */,
 				20EAAE562C4F171D003A68D8 /* ZStack.swift in Sources */,
+				20EAAE7C2C4FABE1003A68D8 /* Reloadable.swift in Sources */,
 				20EAAE072C4A74E7003A68D8 /* UIViewController+Extensions.swift in Sources */,
 				20EAAE542C4F16FF003A68D8 /* TopNotch.swift in Sources */,
 				20EAAE422C4E163B003A68D8 /* ArrowView.swift in Sources */,
@@ -555,6 +562,7 @@
 				20EAAE222C4DE53A003A68D8 /* Endpoint.swift in Sources */,
 				20EAAE182C4CB1F6003A68D8 /* FAQItemViewModel.swift in Sources */,
 				20EAAE2F2C4DFB73003A68D8 /* HelpCenterCategoriesEndpoint.swift in Sources */,
+				20EAAE7A2C4FA04D003A68D8 /* UITextField+Extensions.swift in Sources */,
 				20EAAE402C4E0850003A68D8 /* HelpCenterCategoryEndpoint.swift in Sources */,
 				20EAAE2C2C4DFB2E003A68D8 /* CategoriesResponseDTO.swift in Sources */,
 				20EAAE3C2C4E07A7003A68D8 /* HeaderDTO.swift in Sources */,

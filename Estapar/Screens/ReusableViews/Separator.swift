@@ -12,7 +12,7 @@ final class Separator: UIView {
     var body: UIView {
         UIView()
             .set(\.heightAnchor, to: 1)
-            .backgroundColor(.lightGray)
+            .backgroundColor(.gray100)
             .padding(.all, 4)
     }
 

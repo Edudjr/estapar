@@ -70,6 +70,13 @@ extension UIView {
     }
 
     @discardableResult
+    func borderColor(_ color: UIColor, width: CGFloat = 1) -> Self {
+        layer.borderColor = color.cgColor
+        layer.borderWidth = width
+        return self
+    }
+
+    @discardableResult
     func title(_ text: String) -> Self {
         DispatchQueue.main.async {
             self.parentViewController?.title = text

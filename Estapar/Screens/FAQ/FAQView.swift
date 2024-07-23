@@ -14,6 +14,7 @@ final class FAQView: UIView {
     private let viewModel: FAQViewModel
     private var isLoadingCancellable: AnyCancellable?
     private var itemsCancellable: AnyCancellable?
+    private var isEditting = false
 
     var body: UIView {
         if viewModel.isLoading {
@@ -28,23 +29,33 @@ final class FAQView: UIView {
                         .padding(.bottom, 20)
 
                     TextFieldView()
+                        .placeholder("Pesquisar")
                         .text(viewModel.appliedSearch)
                         .onEdit { [weak self] text in
                             self?.viewModel.appliedSearch = text
+                            self?.isEditting = true
                         }
-                        .focus()
+                        .focus(isEditting)
                         .padding(.bottom, 8)
 
-                    ForEach(viewModel.items) { item in
-                        FAQItemView(viewModel: item)
-                            .padding(.vertical, 4)
-                    }
+                    reloadableItems
                 }
             }
             .showsVerticalScrollIndicator(false)
             .padding(.all, 16)
         }
     }
+
+    lazy var reloadableItems: Reloadable = {
+        Reloadable { [weak self] in
+            VerticalStack {
+                ForEach(self?.viewModel.items ?? []) { item in
+                    FAQItemView(viewModel: item)
+                        .padding(.vertical, 4)
+                }
+            }
+        }
+    }()
 
     init(viewModel: FAQViewModel) {
         self.viewModel = viewModel
@@ -62,7 +73,7 @@ final class FAQView: UIView {
         itemsCancellable = viewModel.$items
             .receive(on: DispatchQueue.main)
             .sink { _ in
-                self.reload()
+                self.reloadableItems.reload()
             }
         isLoadingCancellable = viewModel.$isLoading
             .receive(on: DispatchQueue.main)
