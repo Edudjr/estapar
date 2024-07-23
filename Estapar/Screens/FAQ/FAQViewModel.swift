@@ -25,7 +25,7 @@ final class FAQViewModel {
     }
 
     @Published var items = [FAQItemViewModel]()
-    @Published var isLoading = true
+    @ConcurrentLoading var isLoading = true
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -37,7 +37,16 @@ final class FAQViewModel {
     }
 
     func loadItems() {
-        helpCenter.requestFAQItems(forCategoryID: categoryId)
+        Task {
+            isLoading = true
+            do {
+                try await helpCenter.requestFAQItems(forCategoryID: categoryId)
+            } catch {
+                // TODO: show error
+                print(error)
+            }
+            isLoading = false
+        }
     }
 
     private func bind() {
@@ -45,13 +54,6 @@ final class FAQViewModel {
             .compactMap { $0 }
             .sink { [weak self] items in
                 self?.unfilteredItems = items.map(FAQItemViewModel.init)
-            }
-            .store(in: &cancellables)
-
-        helpCenter.isLoadingPublisher
-            .compactMap { $0 }
-            .sink { [weak self] isLoading in
-                self?.isLoading = isLoading
             }
             .store(in: &cancellables)
     }

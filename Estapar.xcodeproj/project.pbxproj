@@ -58,6 +58,7 @@
 		20EAAE562C4F171D003A68D8 /* ZStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE552C4F171D003A68D8 /* ZStack.swift */; };
 		20EAAE582C4F6C55003A68D8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE572C4F6C55003A68D8 /* UserModel.swift */; };
 		20EAAE752C4F8100003A68D8 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 20EAAE742C4F8100003A68D8 /* DesignSystem */; };
+		20EAAE782C4F9988003A68D8 /* ConcurrentLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE772C4F9988003A68D8 /* ConcurrentLoading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		20EAAE552C4F171D003A68D8 /* ZStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZStack.swift; sourceTree = "<group>"; };
 		20EAAE572C4F6C55003A68D8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		20EAAE732C4F80B2003A68D8 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = text; path = DesignSystem; sourceTree = SOURCE_ROOT; };
+		20EAAE772C4F9988003A68D8 /* ConcurrentLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentLoading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,9 +189,10 @@
 			children = (
 				20EAAE732C4F80B2003A68D8 /* DesignSystem */,
 				20EAAE302C4DFFB2003A68D8 /* API */,
-				20EAAE1C2C4DE001003A68D8 /* Network */,
 				20EAAE052C4A74D9003A68D8 /* Extensions */,
+				20EAAE1C2C4DE001003A68D8 /* Network */,
 				20EAADF32C4A2336003A68D8 /* Models */,
+				20EAAE762C4F9952003A68D8 /* PropertyWrappers */,
 				20EAADFB2C4A25AB003A68D8 /* Screens */,
 				20EAADB62C49DBE5003A68D8 /* AppDelegate.swift */,
 				20EAADB82C49DBE5003A68D8 /* SceneDelegate.swift */,
@@ -372,6 +375,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		20EAAE762C4F9952003A68D8 /* PropertyWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				20EAAE772C4F9988003A68D8 /* ConcurrentLoading.swift */,
+			);
+			path = PropertyWrappers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -520,6 +531,7 @@
 				20EAAE422C4E163B003A68D8 /* ArrowView.swift in Sources */,
 				20EAAE1E2C4DE010003A68D8 /* NetworkManager.swift in Sources */,
 				20EAAE582C4F6C55003A68D8 /* UserModel.swift in Sources */,
+				20EAAE782C4F9988003A68D8 /* ConcurrentLoading.swift in Sources */,
 				20EAAE322C4E028A003A68D8 /* HelpCenterCategory.swift in Sources */,
 				20EAAE092C4A752C003A68D8 /* ScrollView+Extensions.swift in Sources */,
 				20EAADBB2C49DBE5003A68D8 /* HomeViewController.swift in Sources */,

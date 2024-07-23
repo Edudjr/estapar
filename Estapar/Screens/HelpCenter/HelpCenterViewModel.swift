@@ -14,13 +14,11 @@ final class HelpCenterViewModel {
 
     private var cancellables = Set<AnyCancellable>()
 
-//    @Published var header: Header?
-
     @Published var helloUserMessage: String?
     @Published var canWeHelpMessage: String?
     @Published var headerBackgroundImage: String?
     @Published var categories = [HelpCenterCategoryViewModel]()
-    @Published var isLoading = false
+    @ConcurrentLoading var isLoading = false
 
     init(helpCenter: HelpCenterProtocol, user: UserProtocol) {
         self.helpCenter = helpCenter
@@ -29,11 +27,29 @@ final class HelpCenterViewModel {
     }
 
     func loadCategories() {
-        helpCenter.requestCategories()
+        Task {
+            isLoading = true
+            do {
+                try await helpCenter.requestCategories()
+            } catch {
+                // TODO: show error
+                print(error)
+            }
+            isLoading = false
+        }
     }
 
     func loadHeader() {
-        user.requestUser()
+        Task {
+            isLoading = true
+            do {
+                try await  user.requestUser()
+            } catch {
+                // TODO: show error
+                print(error)
+            }
+            isLoading = false
+        }
     }
 
     func bind() {
@@ -60,15 +76,6 @@ final class HelpCenterViewModel {
             .sink { [weak self] items in
                 guard let self else { return }
                 self.categories = items.map(HelpCenterCategoryViewModel.init)
-            }
-            .store(in: &cancellables)
-
-        helpCenter.isLoadingPublisher
-            .receive(on: DispatchQueue.main)
-            .compactMap { $0 }
-            .sink { [weak self] isLoading in
-                guard let self else { return }
-                self.isLoading = isLoading
             }
             .store(in: &cancellables)
     }

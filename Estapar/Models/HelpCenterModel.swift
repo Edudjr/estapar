@@ -11,10 +11,10 @@ protocol HelpCenterProtocol {
     var headerPublisher: AnyPublisher<Header?, Never> { get }
     var categoriesPublisher: AnyPublisher<[HelpCenterCategory]?, Never> { get }
     var faqItemsPublisher: AnyPublisher<[FAQItem]?, Never> { get }
-    var isLoadingPublisher: AnyPublisher<Bool?, Never> { get }
+//    var isLoadingPublisher: AnyPublisher<Bool?, Never> { get }
 
-    func requestCategories()
-    func requestFAQItems(forCategoryID: String)
+    func requestCategories() async throws
+    func requestFAQItems(forCategoryID: String) async throws
 }
 
 /**
@@ -27,7 +27,6 @@ final class HelpCenterModel: HelpCenterProtocol {
     @Published var header: Header?
     @Published var categories: [HelpCenterCategory]?
     @Published var faqItems: [FAQItem]?
-    @Published var isLoading: Bool?
 
     var headerPublisher: AnyPublisher<Header?, Never> {
         $header.eraseToAnyPublisher()
@@ -41,34 +40,22 @@ final class HelpCenterModel: HelpCenterProtocol {
         $faqItems.eraseToAnyPublisher()
     }
 
-    var isLoadingPublisher: AnyPublisher<Bool?, Never> {
-        $isLoading.eraseToAnyPublisher()
-    }
-
     private let api: HelpCenterAPIProtocol
 
     init(api: HelpCenterAPIProtocol) {
         self.api = api
     }
 
-    func requestCategories() {
-        Task {
-            isLoading = true
-            let response = try await api.categories()
-            let categories = response.items?.compactMap(HelpCenterCategory.init)
-            self.header = response.header.map(Header.init)
-            self.categories = categories
-            isLoading = false
-        }
+    func requestCategories() async throws {
+        let response = try await api.categories()
+        let categories = response.items?.compactMap(HelpCenterCategory.init)
+        self.header = response.header.map(Header.init)
+        self.categories = categories
     }
 
-    func requestFAQItems(forCategoryID categoryID: String) {
-        Task {
-            isLoading = true
-            let response = try await api.faq(forCategoryID: categoryID)
-            let items = response.items?.compactMap(FAQItem.init)
-            self.faqItems = items
-            isLoading = false
-        }
+    func requestFAQItems(forCategoryID categoryID: String) async throws {
+        let response = try await api.faq(forCategoryID: categoryID)
+        let items = response.items?.compactMap(FAQItem.init)
+        self.faqItems = items
     }
 }

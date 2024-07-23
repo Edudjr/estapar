@@ -14,10 +14,10 @@ final class ArrowView: UIView {
     }
 
     var body: UIView {
-        UIImageView(image: UIImage(systemName: "arrow.right"))
+        UIImageView(image: UIImage(named: "ArrowRight"))
             .contentMode(.scaleAspectFit)
-            .set(\.heightAnchor, to: 24)
-            .set(\.widthAnchor, to: 24)
+            .set(\.heightAnchor, to: 16)
+            .set(\.widthAnchor, to: 16)
     }
 
     private let direction: Direction
