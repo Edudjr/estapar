@@ -1,6 +1,8 @@
 # Estapar/Zul Test App
 
-![](MarkdownResources/estapar.mov)
+
+<iframe src="https://drive.google.com/file/d/1Sri8VoSKQrNsb8A9YWKz1sVrpm9J1nVy/preview" width="640" height="380"></iframe>
+
 
 | Inicio | Home Expandida | Home Colapsada | FAQ | 
 | --- | --- | --- | --- |
@@ -8,13 +10,7 @@
 
 ## Overview
 
-Este projeto adota diversas tecnologias e padrões para criar uma aplicação iOS eficiente e modular. Primeiramente, utilizei um framework próprio chamado DeclarativeUIKit para facilitar a construção de interfaces de maneira declarativa, inspirado em SwiftUI.
-
-Optei pelo padrão MVVM por ser equilibrado entre complexidade e flexibilidade, proporcionando uma estrutura robusta e testável sem o excesso de boilerplate de outras arquiteturas. Também adicionei um Swift Package chamado DesignSystem, que padroniza fontes e cores conforme os designs definidos no Figma.
-
-Implementei os princípios SOLID no projeto, com ênfase em Single Responsibility, Open-Closed e Dependency Inversion. Isso resultou em um código mais modular e fácil de manter. Por exemplo, as views são altamente reutilizáveis, enquanto a inversão de dependência facilita a substituição de implementações sem afetar o restante do código.
-
-Para gerenciar as dependências, estabeleci um Composition Root, centralizando a criação e injeção de dependências. Isso permite a fácil troca de implementações entre ambientes de desenvolvimento e produção, garantindo flexibilidade e modularidade. Essa abordagem segue os princípios de Clean Architecture, tornando o código mais adaptável e sustentável.
+Este projeto utiliza diversas tecnologias e padrões para criar uma aplicação iOS eficiente e modular. Foi usado um framework próprio, o DeclarativeUIKit, inspirado no SwiftUI para facilitar a construção de interfaces. A arquitetura escolhida foi MVVM por seu equilíbrio entre complexidade e flexibilidade. Também foi adicionado um Swift Package chamado DesignSystem para padronizar fontes e cores conforme os designs do Figma. Os princípios SOLID foram implementados, com destaque para Single Responsibility, Open-Closed e Dependency Inversion, resultando em um código modular e fácil de manter. A gestão de dependências é centralizada em um Composition Root, permitindo a troca de implementações entre ambientes de desenvolvimento e produção, seguindo os princípios de Clean Architecture para maior adaptabilidade e sustentabilidade do código.
 
 ## Tecnologias e Padrões
 
