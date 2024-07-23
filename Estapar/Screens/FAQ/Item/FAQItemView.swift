@@ -17,8 +17,8 @@ final class FAQItemView: UIView {
         VerticalStack {
             UILabel()
                 .text(viewModel.category)
-                .font(.boldSystemFont(ofSize: 18))
-                .textColor(.blue)
+                .font(.subtleSemiBold)
+                .textColor(.zulPrimary700)
                 .onTapGesture { [weak self] in
                     self?.viewModel.isExpanded.toggle()
                 }

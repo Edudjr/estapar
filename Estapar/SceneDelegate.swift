@@ -14,13 +14,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
 
-                let window = UIWindow(windowScene: scene)
-                window.backgroundColor = .white
+        let window = UIWindow(windowScene: scene)
+        window.backgroundColor = ColorScheme.primaryWhite.uiColor
 
-                window.rootViewController = compositionRoot()
+        window.rootViewController = compositionRoot()
 
-                self.window = window
-                window.makeKeyAndVisible()
+        self.window = window
+        window.makeKeyAndVisible()
     }
 
     private func compositionRoot() -> UIViewController {
@@ -41,8 +41,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let homeViewModel = HomeViewModel(helpCenter: helpCenterModel, user: userModel)
         let homeViewController = HomeViewController(viewModel: homeViewModel)
-
-//        let navigation = UINavigationController(rootViewController: homeViewController)
 
         return homeViewController
     }

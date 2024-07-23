@@ -14,7 +14,7 @@ extension UILabel {
     }
 
     @discardableResult
-    func textColor(_ color: ColorScheme = .primary) -> Self {
+    func textColor(_ color: ColorScheme = .primaryWhite) -> Self {
         self.textColor(color.uiColor)
     }
 }

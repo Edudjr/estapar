@@ -12,12 +12,12 @@ final class TopNotch: UIView {
     var body: UIView {
         ZStack {
             VerticalStack {
-                UIView().backgroundColor(.blue)
-                UIView().backgroundColor(.white)
+                UIView().backgroundColor(.zulPrimary700)
+                UIView().backgroundColor(.primaryWhite)
             }
             .distribution(.fillEqually)
 
-            UIView().backgroundColor(.white).rounded(10)
+            UIView().backgroundColor(.primaryWhite).rounded(10)
         }
         .set(\.heightAnchor, to: 20)
     }

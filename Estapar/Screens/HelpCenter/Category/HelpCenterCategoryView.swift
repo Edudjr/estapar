@@ -13,7 +13,8 @@ class HelpCenterCategoryView: UIView {
         VerticalStack {
             UILabel()
                 .text(title)
-                .font(.boldSystemFont(ofSize: 18))
+                .font(.smallBold)
+                .textColor(.primaryBlack)
                 .numberOfLines(2)
                 .padding(.bottom, 28)
 
@@ -22,14 +23,15 @@ class HelpCenterCategoryView: UIView {
             HorizontalStack {
                 UILabel()
                     .text("\(articlesNumber) artigos")
-                    .font(.systemFont(ofSize: 12))
+                    .font(.small)
+                    .textColor(.gray400)
 
                 ArrowView()
             }
             .alignment(.center)
         }
         .padding(.all, 10)
-        .backgroundColor(.white)
+        .backgroundColor(.primaryWhite)
         .bordered()
     }()
 

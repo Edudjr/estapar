@@ -18,11 +18,11 @@ final class HelpCenterWelcomeMessage: UIView {
                 .text(line1)
                 .font(.h4)
                 .textColor(.zulPrimary200)
-           
+
             UILabel()
                 .text(line2)
                 .font(.h4)
-                .textColor(.primary)
+                .textColor(.primaryWhite)
         }
         .padding(.all, 15)
     }

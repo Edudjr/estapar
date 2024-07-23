@@ -22,7 +22,8 @@ final class FAQView: UIView {
                 VerticalStack {
                     UILabel()
                         .text("Perguntas frequentes")
-                        .font(.boldSystemFont(ofSize: 18))
+                        .font(.smallBold)
+                        .textColor(.primaryBlack)
                         .padding(.bottom, 20)
 
                     TextFieldView()
@@ -47,7 +48,7 @@ final class FAQView: UIView {
     init(viewModel: FAQViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
-        add(body).backgroundColor(.white)
+        add(body).backgroundColor(.primaryWhite)
         bind()
         loadItems()
     }

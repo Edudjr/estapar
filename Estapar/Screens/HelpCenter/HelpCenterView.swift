@@ -32,7 +32,7 @@ final class HelpCenterView: UIView {
                                          line2: self?.viewModel.canWeHelpMessage ?? "")
             }
             .asUIView()
-            .backgroundColor(.white)
+            .backgroundColor(.primaryWhite)
             .fadeIn()
         }
     }

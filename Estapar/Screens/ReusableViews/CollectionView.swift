@@ -81,7 +81,7 @@ where Data: RandomAccessCollection {
         collectionview.showsVerticalScrollIndicator = false
         collectionview.backgroundColor = UIColor.clear
 
-        view.add(collectionview).backgroundColor(.white)
+        view.add(collectionview).backgroundColor(.primaryWhite)
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -155,7 +155,7 @@ where Data: RandomAccessCollection {
     }
 
     private func setHeaderBackgroundColor(forCollapsedPercantage percentage: CGFloat) {
-        headerBackgroundViewOverlay.backgroundColor(.blue.withAlphaComponent(percentage/100.0))
+        headerBackgroundViewOverlay.backgroundColor(ColorScheme.zulPrimary700.uiColor.withAlphaComponent(percentage/100.0))
     }
 
     private func calculateCollapsedPercentage(forYOffset offset: CGFloat) -> CGFloat {
@@ -249,7 +249,7 @@ final class ReusableCollectionViewCell: UICollectionViewCell {
     func inject(_ view: UIView) {
         contentView.subviews.forEach { $0.removeFromSuperview() }
         contentView.add(view)
-        contentView.backgroundColor(.white)
+        contentView.backgroundColor(.primaryWhite)
     }
 }
 

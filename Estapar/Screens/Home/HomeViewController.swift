@@ -18,7 +18,8 @@ final class HomeViewController: UIViewController {
 
             UILabel()
                 .text("Abrir central de ajuda")
-                .textColor(.blue)
+                .font(.subtleSemiBold)
+                .textColor(.zulPrimary700)
                 .textAlignment(.center)
                 .padding(.all, 8)
                 .bordered()
@@ -47,7 +48,7 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.add(body).backgroundColor(.white)
+        view.add(body).backgroundColor(.primaryWhite)
     }
 
     private func reloadView() {

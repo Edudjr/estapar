@@ -13,13 +13,16 @@ extension UINavigationController {
     func setDefaultAppearance() -> Self {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithTransparentBackground()
-        navigationBarAppearance.backgroundColor = .blue
-        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        navigationBarAppearance.backgroundColor = ColorScheme.zulPrimary700.uiColor
+        navigationBarAppearance.titleTextAttributes = [
+            NSAttributedString.Key.font: FontScheme.smallBold.uiFont,
+            NSAttributedString.Key.foregroundColor: ColorScheme.primaryWhite.uiColor
+        ]
         navigationBar.standardAppearance = navigationBarAppearance
         navigationBar.compactAppearance = navigationBarAppearance
         navigationBar.scrollEdgeAppearance = navigationBarAppearance
-        navigationBar.tintColor = .white
-        self.view.backgroundColor(.white)
+        navigationBar.tintColor = ColorScheme.primaryWhite.uiColor
+        self.view.backgroundColor(.primaryWhite)
         return self
     }
 
