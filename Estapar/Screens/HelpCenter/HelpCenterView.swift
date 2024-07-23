@@ -21,11 +21,7 @@ final class HelpCenterView: UIView {
             CollectionView(viewModel.categories) { category in
                 HelpCenterCategoryView(viewModel: category)
                     .onTapGesture { [weak self] in
-                        guard let self else { return }
-                        let viewModel = FAQViewModel(categoryId: category.categoryId,
-                                                     helpCenter: self.viewModel.helpCenter)
-                        let faq = FAQView(viewModel: viewModel)
-                        self.show(faq)
+                        self?.viewModel.openFAQTap(categoryId: category.categoryId)
                     }
             }
             .header(backgroundImageURL: viewModel.headerBackgroundImage) { [weak self] in
@@ -65,6 +61,15 @@ final class HelpCenterView: UIView {
             .compactMap { $0 }
             .sink { [weak self] message in
                 self?.showErrorDialog(message: message)
+            }
+            .store(in: &cancellables)
+
+        viewModel.$navigateToFAQ
+            .receive(on: DispatchQueue.main)
+            .compactMap { $0 }
+            .sink { [weak self] viewModel in
+                let faq = FAQView(viewModel: viewModel)
+                self?.show(faq)
             }
             .store(in: &cancellables)
     }

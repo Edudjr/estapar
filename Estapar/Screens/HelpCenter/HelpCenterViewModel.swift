@@ -19,7 +19,8 @@ final class HelpCenterViewModel {
     @Published var headerBackgroundImage: String?
     @Published var categories = [HelpCenterCategoryViewModel]()
     @Published var errorMessage: String?
-    
+    @Published var navigateToFAQ: FAQViewModel?
+
     @ConcurrentLoading var isLoading = false
 
     init(helpCenter: HelpCenterProtocol, user: UserProtocol) {
@@ -50,6 +51,12 @@ final class HelpCenterViewModel {
             }
             isLoading = false
         }
+    }
+
+    func openFAQTap(categoryId: String) {
+        let viewModel = FAQViewModel(categoryId: categoryId,
+                                     helpCenter: helpCenter)
+        navigateToFAQ = viewModel
     }
 
     func bind() {

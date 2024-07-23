@@ -7,10 +7,21 @@
 
 import Combine
 
+/**
+ 
+ */
 final class HomeViewModel {
-    let helpCenterViewModel: HelpCenterViewModel
+    @Published private(set) var navigateToHelpCenterView: HelpCenterViewModel?
+
+    private let helpCenter: HelpCenterProtocol
+    private let user: UserProtocol
 
     init(helpCenter: HelpCenterProtocol, user: UserProtocol) {
-        self.helpCenterViewModel = HelpCenterViewModel(helpCenter: helpCenter, user: user)
+        self.helpCenter = helpCenter
+        self.user = user
+    }
+
+    func openHelpCenterTap() {
+        navigateToHelpCenterView = HelpCenterViewModel(helpCenter: helpCenter, user: user)
     }
 }

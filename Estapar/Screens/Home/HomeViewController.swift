@@ -10,8 +10,12 @@ import UIKit
 import DeclarativeUIKit
 import DesignSystem
 
+/**
+ Initial view controller for our App.
+ */
 final class HomeViewController: UIViewController {
     private let viewModel: HomeViewModel
+    private var cancellables = Set<AnyCancellable>()
 
     var body: UIView {
         VerticalStack {
@@ -25,12 +29,7 @@ final class HomeViewController: UIViewController {
                 .padding(.all, 8)
                 .bordered()
                 .onTapGesture { [weak self] in
-                    guard let self else { return }
-
-                    let view = HelpCenterView(viewModel: viewModel.helpCenterViewModel)
-                    let navigation = UINavigationController(rootView: view).setDefaultAppearance()
-
-                    self.show(navigation, sender: nil)
+                    self?.viewModel.openHelpCenterTap()
                 }
 
             Spacer()
@@ -41,6 +40,7 @@ final class HomeViewController: UIViewController {
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        bind()
     }
     
     required init?(coder: NSCoder) {
@@ -55,6 +55,19 @@ final class HomeViewController: UIViewController {
     private func reloadView() {
         view.subviews.forEach { $0.removeFromSuperview() }
         view.add(body)
+    }
+
+    private func bind() {
+        viewModel.$navigateToHelpCenterView
+            .receive(on: DispatchQueue.main)
+            .compactMap { $0 }
+            .sink { [weak self] viewModel in
+                let view = HelpCenterView(viewModel: viewModel)
+                let navigation = UINavigationController(rootView: view).setDefaultAppearance()
+
+                self?.show(navigation, sender: nil)
+            }
+            .store(in: &cancellables)
     }
 }
 
