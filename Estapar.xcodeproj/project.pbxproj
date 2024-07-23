@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		202352312C4FDE8C0063839F /* DTOMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202352302C4FDE8C0063839F /* DTOMocks.swift */; };
+		202352382C4FEE480063839F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202352372C4FEE480063839F /* Endpoint.swift */; };
+		2023523D2C5007540063839F /* getCategoriesExample1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023523C2C5007540063839F /* getCategoriesExample1.swift */; };
+		2023523F2C5009B80063839F /* getFAQExample1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023523E2C5009B80063839F /* getFAQExample1.swift */; };
+		202352412C500B540063839F /* MockHelpCenterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202352402C500B540063839F /* MockHelpCenterAPI.swift */; };
+		202352432C5014860063839F /* MockHelpCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202352422C5014860063839F /* MockHelpCenter.swift */; };
+		202352452C5016B20063839F /* HelpCenterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202352442C5016B20063839F /* HelpCenterViewModelTests.swift */; };
 		20EAADB72C49DBE5003A68D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAADB62C49DBE5003A68D8 /* AppDelegate.swift */; };
 		20EAADB92C49DBE5003A68D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAADB82C49DBE5003A68D8 /* SceneDelegate.swift */; };
 		20EAADBB2C49DBE5003A68D8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAADBA2C49DBE5003A68D8 /* HomeViewController.swift */; };
 		20EAADC02C49DBE7003A68D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20EAADBF2C49DBE7003A68D8 /* Assets.xcassets */; };
 		20EAADC32C49DBE7003A68D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20EAADC12C49DBE7003A68D8 /* LaunchScreen.storyboard */; };
-		20EAADCE2C49DBE7003A68D8 /* EstaparTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAADCD2C49DBE7003A68D8 /* EstaparTests.swift */; };
 		20EAADD82C49DBE7003A68D8 /* EstaparUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAADD72C49DBE7003A68D8 /* EstaparUITests.swift */; };
 		20EAADDA2C49DBE7003A68D8 /* EstaparUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAADD92C49DBE7003A68D8 /* EstaparUITestsLaunchTests.swift */; };
 		20EAADED2C49F9AB003A68D8 /* DeclarativeUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 20EAADEC2C49F9AB003A68D8 /* DeclarativeUIKit */; };
@@ -35,7 +41,7 @@
 		20EAAE1B2C4DD44B003A68D8 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE1A2C4DD44B003A68D8 /* TextFieldView.swift */; };
 		20EAAE1E2C4DE010003A68D8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE1D2C4DE010003A68D8 /* NetworkManager.swift */; };
 		20EAAE202C4DE50E003A68D8 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE1F2C4DE50E003A68D8 /* Environment.swift */; };
-		20EAAE222C4DE53A003A68D8 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE212C4DE53A003A68D8 /* Endpoint.swift */; };
+		20EAAE222C4DE53A003A68D8 /* EndpointMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE212C4DE53A003A68D8 /* EndpointMethod.swift */; };
 		20EAAE242C4DE550003A68D8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE232C4DE550003A68D8 /* NetworkError.swift */; };
 		20EAAE272C4DF73F003A68D8 /* HelpCenterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE262C4DF73F003A68D8 /* HelpCenterAPI.swift */; };
 		20EAAE2A2C4DFB18003A68D8 /* CategoryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE292C4DFB18003A68D8 /* CategoryDTO.swift */; };
@@ -62,6 +68,7 @@
 		20EAAE7A2C4FA04D003A68D8 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE792C4FA04D003A68D8 /* UITextField+Extensions.swift */; };
 		20EAAE7C2C4FABE1003A68D8 /* Reloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE7B2C4FABE1003A68D8 /* Reloadable.swift */; };
 		20EAAE7E2C4FB4DE003A68D8 /* EstaparError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE7D2C4FB4DE003A68D8 /* EstaparError.swift */; };
+		20EAAE802C4FD3AA003A68D8 /* HelpCenterModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EAAE7F2C4FD3AA003A68D8 /* HelpCenterModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +89,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		202352302C4FDE8C0063839F /* DTOMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTOMocks.swift; sourceTree = "<group>"; };
+		202352372C4FEE480063839F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		2023523C2C5007540063839F /* getCategoriesExample1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getCategoriesExample1.swift; sourceTree = "<group>"; };
+		2023523E2C5009B80063839F /* getFAQExample1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getFAQExample1.swift; sourceTree = "<group>"; };
+		202352402C500B540063839F /* MockHelpCenterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHelpCenterAPI.swift; sourceTree = "<group>"; };
+		202352422C5014860063839F /* MockHelpCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHelpCenter.swift; sourceTree = "<group>"; };
+		202352442C5016B20063839F /* HelpCenterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterViewModelTests.swift; sourceTree = "<group>"; };
+		2040EF1E2C4FD95C0002D3D5 /* Estapar.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Estapar.xctestplan; sourceTree = "<group>"; };
+		20CB72BA2C4FDC8800AD0CCF /* EstaparTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EstaparTests.xctestplan; sourceTree = "<group>"; };
 		20EAADB32C49DBE5003A68D8 /* Estapar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Estapar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20EAADB62C49DBE5003A68D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20EAADB82C49DBE5003A68D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,7 +106,6 @@
 		20EAADC22C49DBE7003A68D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20EAADC42C49DBE7003A68D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20EAADC92C49DBE7003A68D8 /* EstaparTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EstaparTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		20EAADCD2C49DBE7003A68D8 /* EstaparTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstaparTests.swift; sourceTree = "<group>"; };
 		20EAADD32C49DBE7003A68D8 /* EstaparUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EstaparUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20EAADD72C49DBE7003A68D8 /* EstaparUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstaparUITests.swift; sourceTree = "<group>"; };
 		20EAADD92C49DBE7003A68D8 /* EstaparUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstaparUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -113,7 +128,7 @@
 		20EAAE1A2C4DD44B003A68D8 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		20EAAE1D2C4DE010003A68D8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		20EAAE1F2C4DE50E003A68D8 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		20EAAE212C4DE53A003A68D8 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		20EAAE212C4DE53A003A68D8 /* EndpointMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointMethod.swift; sourceTree = "<group>"; };
 		20EAAE232C4DE550003A68D8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		20EAAE262C4DF73F003A68D8 /* HelpCenterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterAPI.swift; sourceTree = "<group>"; };
 		20EAAE292C4DFB18003A68D8 /* CategoryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDTO.swift; sourceTree = "<group>"; };
@@ -139,6 +154,7 @@
 		20EAAE792C4FA04D003A68D8 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		20EAAE7B2C4FABE1003A68D8 /* Reloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reloadable.swift; sourceTree = "<group>"; };
 		20EAAE7D2C4FB4DE003A68D8 /* EstaparError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstaparError.swift; sourceTree = "<group>"; };
+		20EAAE7F2C4FD3AA003A68D8 /* HelpCenterModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCenterModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +185,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		202352322C4FDF320063839F /* ResponseExamples */ = {
+			isa = PBXGroup;
+			children = (
+				2023523C2C5007540063839F /* getCategoriesExample1.swift */,
+				2023523E2C5009B80063839F /* getFAQExample1.swift */,
+			);
+			path = ResponseExamples;
+			sourceTree = "<group>";
+		};
 		20EAADAA2C49DBE5003A68D8 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +230,7 @@
 				20EAADBF2C49DBE7003A68D8 /* Assets.xcassets */,
 				20EAADC12C49DBE7003A68D8 /* LaunchScreen.storyboard */,
 				20EAADC42C49DBE7003A68D8 /* Info.plist */,
+				2040EF1E2C4FD95C0002D3D5 /* Estapar.xctestplan */,
 			);
 			path = Estapar;
 			sourceTree = "<group>";
@@ -212,7 +238,10 @@
 		20EAADCC2C49DBE7003A68D8 /* EstaparTests */ = {
 			isa = PBXGroup;
 			children = (
-				20EAADCD2C49DBE7003A68D8 /* EstaparTests.swift */,
+				20CB72BA2C4FDC8800AD0CCF /* EstaparTests.xctestplan */,
+				20EAAE812C4FD3BA003A68D8 /* Mocks */,
+				20EAAE7F2C4FD3AA003A68D8 /* HelpCenterModelTests.swift */,
+				202352442C5016B20063839F /* HelpCenterViewModelTests.swift */,
 			);
 			path = EstaparTests;
 			sourceTree = "<group>";
@@ -345,7 +374,7 @@
 			children = (
 				20EAAE1D2C4DE010003A68D8 /* NetworkManager.swift */,
 				20EAAE1F2C4DE50E003A68D8 /* Environment.swift */,
-				20EAAE212C4DE53A003A68D8 /* Endpoint.swift */,
+				20EAAE212C4DE53A003A68D8 /* EndpointMethod.swift */,
 				20EAAE232C4DE550003A68D8 /* NetworkError.swift */,
 			);
 			path = Network;
@@ -370,6 +399,7 @@
 			children = (
 				20EAAE2E2C4DFB73003A68D8 /* HelpCenterCategoriesEndpoint.swift */,
 				20EAAE3F2C4E0850003A68D8 /* HelpCenterCategoryEndpoint.swift */,
+				202352372C4FEE480063839F /* Endpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -390,6 +420,17 @@
 				20EAAE772C4F9988003A68D8 /* ConcurrentLoading.swift */,
 			);
 			path = PropertyWrappers;
+			sourceTree = "<group>";
+		};
+		20EAAE812C4FD3BA003A68D8 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				202352322C4FDF320063839F /* ResponseExamples */,
+				202352302C4FDE8C0063839F /* DTOMocks.swift */,
+				202352402C500B540063839F /* MockHelpCenterAPI.swift */,
+				202352422C5014860063839F /* MockHelpCenter.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,6 +582,7 @@
 				20EAAE422C4E163B003A68D8 /* ArrowView.swift in Sources */,
 				20EAAE1E2C4DE010003A68D8 /* NetworkManager.swift in Sources */,
 				20EAAE582C4F6C55003A68D8 /* UserModel.swift in Sources */,
+				202352382C4FEE480063839F /* Endpoint.swift in Sources */,
 				20EAAE782C4F9988003A68D8 /* ConcurrentLoading.swift in Sources */,
 				20EAAE322C4E028A003A68D8 /* HelpCenterCategory.swift in Sources */,
 				20EAAE092C4A752C003A68D8 /* ScrollView+Extensions.swift in Sources */,
@@ -563,7 +605,7 @@
 				20EAAE102C4CA946003A68D8 /* HelpCenterViewModel.swift in Sources */,
 				20EAADB92C49DBE5003A68D8 /* SceneDelegate.swift in Sources */,
 				20EAADEF2C49FA73003A68D8 /* HelpCenterCategoryView.swift in Sources */,
-				20EAAE222C4DE53A003A68D8 /* Endpoint.swift in Sources */,
+				20EAAE222C4DE53A003A68D8 /* EndpointMethod.swift in Sources */,
 				20EAAE182C4CB1F6003A68D8 /* FAQItemViewModel.swift in Sources */,
 				20EAAE2F2C4DFB73003A68D8 /* HelpCenterCategoriesEndpoint.swift in Sources */,
 				20EAAE7A2C4FA04D003A68D8 /* UITextField+Extensions.swift in Sources */,
@@ -585,7 +627,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20EAADCE2C49DBE7003A68D8 /* EstaparTests.swift in Sources */,
+				2023523F2C5009B80063839F /* getFAQExample1.swift in Sources */,
+				202352452C5016B20063839F /* HelpCenterViewModelTests.swift in Sources */,
+				202352312C4FDE8C0063839F /* DTOMocks.swift in Sources */,
+				2023523D2C5007540063839F /* getCategoriesExample1.swift in Sources */,
+				20EAAE802C4FD3AA003A68D8 /* HelpCenterModelTests.swift in Sources */,
+				202352432C5014860063839F /* MockHelpCenter.swift in Sources */,
+				202352412C500B540063839F /* MockHelpCenterAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

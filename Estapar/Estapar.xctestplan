@@ -1,0 +1,35 @@
+{
+  "configurations" : [
+    {
+      "id" : "BD52E5AB-5E6B-45B8-A88C-A24669F66741",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Estapar.xcodeproj",
+      "identifier" : "20EAADB22C49DBE5003A68D8",
+      "name" : "Estapar"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Estapar.xcodeproj",
+        "identifier" : "20EAADC82C49DBE7003A68D8",
+        "name" : "EstaparTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Estapar.xcodeproj",
+        "identifier" : "20EAADD22C49DBE7003A68D8",
+        "name" : "EstaparUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

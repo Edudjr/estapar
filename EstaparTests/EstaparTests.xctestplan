@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "4E85C182-146A-402D-B63F-9B71230238AE",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Estapar.xcodeproj",
+        "identifier" : "20EAADC82C49DBE7003A68D8",
+        "name" : "EstaparTests"
+      }
+    }
+  ],
+  "version" : 1
+}

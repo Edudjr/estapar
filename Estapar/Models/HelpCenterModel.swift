@@ -11,7 +11,6 @@ protocol HelpCenterProtocol {
     var headerPublisher: AnyPublisher<Header?, Never> { get }
     var categoriesPublisher: AnyPublisher<[HelpCenterCategory]?, Never> { get }
     var faqItemsPublisher: AnyPublisher<[FAQItem]?, Never> { get }
-//    var isLoadingPublisher: AnyPublisher<Bool?, Never> { get }
 
     func requestCategories() async throws
     func requestFAQItems(forCategoryID: String) async throws

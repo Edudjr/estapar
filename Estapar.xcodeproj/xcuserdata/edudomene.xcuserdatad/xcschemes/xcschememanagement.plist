@@ -9,6 +9,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>EstaparTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>20EAADB22C49DBE5003A68D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>20EAADC82C49DBE7003A68D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>20EAADD22C49DBE7003A68D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
